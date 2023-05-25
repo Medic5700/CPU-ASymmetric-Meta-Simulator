@@ -7,3 +7,9 @@ It has been moved here for continued development (**minus commit history**).
 ### Development Stack
 - Python 3.10 or greater (required for variable annotations support)
 - A terminal that supports ANSI (IE: default Ubuntu Terminal or the "Windows Terminal" app for Windows)
+
+### Links/References
+- 2020 Devember Entry [https://forum.level1techs.com/t/a-cpu-simulator-where-you-program-the-instruction-set/163339/1]
+- 2021 Devember Entry [https://forum.level1techs.com/t/devember-2021-cpu-simulating-engine-a-rewrite-from-last-devember/177322/1]
+- Level1Techs mention for Devember 2021 [Level1Techs - Here are YOUR Level1Techs Devember 2021 Finalists!] [https://www.youtube.com/watch?v=7-e9abdlTes&t=427s]
+- Original project repository [2020-06-19 -> 2023-05-25] [https://github.com/Medic5700/Book-of-Algorithms/blob/master/CPUsimulator.py]
