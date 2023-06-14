@@ -5479,7 +5479,7 @@ class CPUsim_v4:
             self.defaultDirective : Callable[[ParseNode, Any], tuple[0, None]] = self.null # used to autofill undefined instructions from instructionSet
             
             self.instructionSet :   dict[
-                                        Tuple(str, ...),                        # Instruction or directive
+                                        tuple[str, ...],                        # Instruction or directive
                                         Callable[
                                             [
                                                 ParseNode,                      # The parse/execution tree for a line, for feeding in arguments into a function
