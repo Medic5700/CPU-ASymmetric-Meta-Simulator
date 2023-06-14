@@ -3985,7 +3985,7 @@ def testProgramMultiply():
                         '''
     
     CPU = CPUsim(bitLength, defaultSetup=False)
-    CPU.configSetDisplay(CPU.DisplaySimpleAndClean(0))
+    CPU.configSetDisplay(CPU.DisplaySimpleAndClean(0.5))
 
     #configure memory
     CPU.configAddRegister('r', bitLength, 2) #namespace symbol, bitLength, register amount #will overwrite defaults
@@ -3995,21 +3995,26 @@ def testProgramMultiply():
     CPU.linkAndLoad(program)
 
     #loads arguments into correct registers
+    print(f"Injecting input into t0 = {a}, r0 = {b}")
     CPU.inject(key='t', index=0, value=a)
     CPU.inject(key='r', index=0, value=b)
     CPU.run()
     result : int = CPU.extract(key='t', index=1)
 
-    print(result)
+    print(f"input t0 = {a}, r0 = {b}")
+    print(f"result = {result}")
 
 if __name__ == "__main__":
     #Testing
     # runs all tests
     # to run a specific test module, use $> python .\CPUSimulator.py [test module ...]
-    logging.basicConfig(level = logging.ERROR)
-    unittest.main(verbosity = 2, buffer = True, exit = False)
+    # logging.basicConfig(level = logging.ERROR)
+    # unittest.main(verbosity = 2, buffer = True, exit = False)
     
     # reset logging level
     logging.basicConfig(level = logging.INFO) # CRITICAL=50, ERROR=40, WARN=30, WARNING=30, INFO=20, DEBUG=10, NOTSET=0
     debugHighlight = lambda x : 13000 < x < 30000
     print("\n" + "".ljust(80, "=") + "\n")
+
+    #Run Example Program
+    testProgramMultiply()

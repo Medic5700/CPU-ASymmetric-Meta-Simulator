@@ -8,6 +8,10 @@ It has been moved here for continued development (**minus commit history**).
 - Python 3.10 or greater (required for variable annotations support)
 - A terminal that supports ANSI (IE: default Ubuntu Terminal or the "Windows Terminal" app for Windows)
 
+### Getting Started
+- The current prototype version is in a non-functional state
+- You can run the working legacy version ($ python LegacyV3-CPUsimulator.py). It's currently setup to show a quick demo (of what the project should look like) when run.
+
 ### Links/References
 - Level1Techs 2020 Devember Entry [https://forum.level1techs.com/t/a-cpu-simulator-where-you-program-the-instruction-set/163339/1]
 - Level1Techs 2021 Devember Entry [https://forum.level1techs.com/t/devember-2021-cpu-simulating-engine-a-rewrite-from-last-devember/177322/1]
