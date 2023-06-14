@@ -344,10 +344,10 @@ Reference:
     Change terminology of 'cycle' to 'tick' with expected value of 1*10^10
 """
 
-#asserts python version 3.8 or greater, needed due to new feature used [variable typing]
+#asserts python version
 import sys
 version = sys.version_info
-assert version[0] == 3 and version[1] >= 10
+assert version[0] == 3 and version[1] >= 10, "Python version 3.10 or greater required, needed due to new feature used [variable typing]"
 
 import copy # copy.deepcopy() required because states are a nested dictionary, and need to be copied instead of referenced
 import functools # used for partial functions when executioning 'instruction operations'
