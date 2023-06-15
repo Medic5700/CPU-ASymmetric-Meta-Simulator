@@ -56293,15 +56293,22 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # x : list[tuple[str | int, ...]]
+        # y : tuple[str | int, ...]
+        # z : str | int
+        filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
+            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+        
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
         self.assertTrue(all([i in resultActivity for i in expectedActivity]),
-            f'\nAssert Activities Done:\nExpected activity:\n\t{expectedActivity}\nResult activity:\n\t{resultActivity}')
+            f'\nAssert Activities Done:\nExpected activity:\n\t{filterLargeNumbers(expectedActivity)}\nResult activity:\n\t{filterLargeNumbers(resultActivity)}')
         self.assertTrue(all([i == j for i, j in zip(expectedActivity, resultActivity)]),
-            f'\nAssert Activities Done In Order:\nExpected activity:\n\t{expectedActivity}\nResult activity:\n\t{resultActivity}')
+            f'\nAssert Activities Done In Order:\nExpected activity:\n\t{filterLargeNumbers(expectedActivity)}\nResult activity:\n\t{filterLargeNumbers(resultActivity)}')
         self.assertTrue(all([i == j for i, j in zip(expectedRegisters, resultRegisters)]),
-            f'\nAssert Registers Correct Value:\nExpected registers:\n\t{expectedRegisters}\nResult registers:\n\t{resultRegisters}')
-
+            f'\nAssert Registers Correct Value:\nExpected registers:\n\t{filterLargeNumbers(expectedRegisters)}\nResult registers:\n\t{filterLargeNumbers(resultRegisters)}')
+        
     def test_opShiftR_largeRegisterSize05A2(self):
         """tests opShiftR on 'r0 >> r1 = r2' with bitLength '2**20, 2**20, 2**20' with arithmetic = True -> '2**(2**20 - 1) >> (2**20 - 2) = 2**(2**20) - 1'"""
         raise NotImplementedError
