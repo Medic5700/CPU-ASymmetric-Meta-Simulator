@@ -2378,6 +2378,11 @@ class CPUsim_v4:
             bitLengthDestination : int = funcGetConfig(registerDestination)["bitLength"]
 
             #TODO handle large numbers
+            #TODO extend 'a' BEFORE shift
+            '''
+            #TODO speed up handling large numbers
+                # unittest Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_largeRegisterSize05A2 takes 4000 seconds +
+            '''
 
             result : int = a
             for _ in range(amount): # shift 'a' right WITHIN bitLengthSource
@@ -60160,8 +60165,87 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             f'\nAssert Registers Correct Value:\nExpected registers:\n\t{filterLargeNumbers(expectedRegisters)}\nResult registers:\n\t{filterLargeNumbers(resultRegisters)}')
         
     def test_opShiftR_largeRegisterSize05A2(self):
-        """tests opShiftR on 'r0 >> r1 = r2' with bitLength '2**20, 2**20, 2**20' with arithmetic = True -> '2**(2**20 - 1) >> (2**20 - 2) = 2**(2**20) - 1'"""
-        raise NotImplementedError
+        """tests opShiftR on 'r0 >> r1 = r2' with bitLength '2**20, 2**20, 2**20' with arithmetic = True -> '2**(2**20 - 1) >> (2**20 - 1) = 2**(2**20) - 1'
+        
+        opShiftR on 'r0 >> r1 = r2' with bitLength '2**20, 2**20, 2**20' with arithmetic = True -> '2**(2**20 - 1) >> (2**20 - 1) = 2**(2**20) - 1'
+        -> # create registers
+        r0 = [0, 0];                    value = 2**(2**20 - 1); bitLength = 2**20
+        r1 = [0, 1];                    value = (2**20 - 1); bitLength = 2**20
+        r2 = [0, 2];                    value = 0; bitLength = 2**20
+        ->
+        opShiftR(
+            funcRead                    = funcDummyRead
+            funcWrite                   = funcDummyWrite
+            funcGetConfig               = funcDummyConfig
+            registerDestination         = [0, 2]
+            registerA                   = [0, 0]
+            registerShiftOffset         = [0, 1]
+            arithmetic                  = True
+        )
+        -> # input
+        registerA                       = 2**(2**20 - 1)
+        registerShiftOffset             = (2**20 - 1)
+        arithmetic                      = True
+        ->
+        '2**(2**20 - 1) >> (2**20 - 1) = 2**(2**20) - 1'
+        -> # output
+        registerDestination             = 2**(2**20) - 1
+        -> # written
+        r0 = [0, 2];                    value = 2**(2**20) - 1; bitLength = 2**20
+        """
+
+        r0 : int = 2**(2**20 - 1)
+        r1 : int = (2**20 - 1)
+        r2_out : int = 2**(2**20) - 1
+        
+        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
+        MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
+        MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
+
+        returnValue : None = self.ISA.opShiftR(
+            funcRead                                                            = MMMU.dummyReadWrapper,
+            funcWrite                                                           = MMMU.dummyWriteWrapper,
+            funcGetConfig                                                       = MMMU.dummyGetConfigWrapper,
+            registerDestination                                                 = [0, 2],
+            registerA                                                           = [0, 0],
+            registerShiftOffset                                                 = [0, 1],
+            arithmetic                                                          = True
+        )
+
+        expectedActivity : list[tuple[str, str | int, str | int, int]] = [      # order matters
+            ('read',                    0, 0,                                   r0),
+            ('getConfig',               0, 0,                                   2**20),
+            ('read',                    0, 1,                                   r1),
+            ('getConfig',               0, 2,                                   2**20),
+            ('write',                   0, 2,                                   r2_out)
+        ]
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
+
+        expectedRegisters : list[tuple[str | int, str | int, int]] = [
+            (0, 0,                      r0),                                    # input, no change
+            (0, 1,                      r1),                                    # input, no change
+            (0, 2,                      r2_out)                                 # output
+        ]
+
+        resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
+        
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # x : list[tuple[str | int, ...]]
+        # y : tuple[str | int, ...]
+        # z : str | int
+        filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
+            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+        
+        self.assertEqual(returnValue, None,
+            f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
+        self.assertTrue(all([i in resultActivity for i in expectedActivity]),
+            f'\nAssert Activities Done:\nExpected activity:\n\t{filterLargeNumbers(expectedActivity)}\nResult activity:\n\t{filterLargeNumbers(resultActivity)}')
+        self.assertTrue(all([i == j for i, j in zip(expectedActivity, resultActivity)]),
+            f'\nAssert Activities Done In Order:\nExpected activity:\n\t{filterLargeNumbers(expectedActivity)}\nResult activity:\n\t{filterLargeNumbers(resultActivity)}')
+        self.assertTrue(all([i == j for i, j in zip(expectedRegisters, resultRegisters)]),
+            f'\nAssert Registers Correct Value:\nExpected registers:\n\t{filterLargeNumbers(expectedRegisters)}\nResult registers:\n\t{filterLargeNumbers(resultRegisters)}')
 
     def test_opShiftR_inputBitPattern1BitSweep01(self):
         """tests opShiftR on 'r0 >> r1 = r2' with bitLength '8, 8, 8' with arithmetic = False -> ['(1 << x) >> (1 << y) = ?' for x in range(8) for y in range(8)]"""
