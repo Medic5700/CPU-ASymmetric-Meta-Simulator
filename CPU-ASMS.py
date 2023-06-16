@@ -4,7 +4,7 @@ By: Medic5700
 An implementation of a Meta CPU simulator Engine to allow a better and standardized way to create a customized CPU and ISA to illistrate bitwise instructions in lowlevel algorithms.
 This project is geared towards demonstrating algorithms, and therefor generalizes a lot of details. EX: bitLength is settable, instruction words are one memroy element big, etc
 
-IE: I want to try and directly compair different assembly algorithms with a custom instruction set, and a specific memory layout.
+IE: I want to try and directly compare different assembly algorithms with a custom instruction set, and a specific memory layout.
 
 Development Stack:
     Python 3.10 or greater (required for variable annotations support)
@@ -18,40 +18,17 @@ Goals:
             IE: this is everything this specific CPU instruction does and interacts with in these 15 lines of source code
         Includes a customizable (if unstable) parser to allow for parsing multiple different low level assembly languages.
             This allows for simulating old CPUs (IE: the MOS 6502) with native source code.
-            (Holy Hell this is very outside the box compaired to how parsers should work.)
+            (Holy Hell this is very outside the box compared to how parsers should work.)
     Allow for meaningfull compairisons between various low level algorithms on the same architectures using various metrics (memory accesses, energy usage, etc)
     Allow for meaningfull compairisons between various architectures running the same algorithms using various metrics (energy usage, execution cycles, etc)
     A modular simulator where various things can be swapped in and out. IE: swapping in a different instruction set, different 'displays', different memory configurations, etc.
 
 Quick Start: <==========================================================================================================
     This project is in the 'early prototype' stage.
-    Version 3 is usable, but is considered legacy since the changes needed to be in line with the Goals above warrented a rewrite.
-        Search for the below for class definitions and examples of how to use the CPU simulator:
-            class CPUsim
-            class TestDefaultSimplePrograms(unittest.TestCase)
-            class RiscV
-            class TestRISCV(unittest.TestCase)
     Version 4 is not usable and is currently being worked on.
-        Search for the below for class definitions:
-            class CPUsim_v4
-            class ParseNode(ABC)
-
-Getting Started: <======================================================================================================
-    Note: this is a prototype, so the entire API is in flux
-    refer to "def _testProgram1_defaultMultiply" for a simple example of a possible use case. (for a simuler example in RISCV, refer to "def _testProgram1_RISCVMultiply")
-    refer to "class RiscV" for a mockup of how it could be used to 'create' a processor instruction set at a highlevel.
-
-API
-#TODO
 
 API Detailed (Depreciated)
     class CPUsim
-        *var state                                          Contains the current registers, stored as 2-dimension dictionary IE: state["registers"][0] = register 0
-        *var lastState                                      Contains the state of the registers from the last cycle. Structure is same as 'state'
-        *var config                                         Contains meta information on every register (bitLength, aliases, notes, show?). stored as 3-dimension dictionary IE: config["r"][0]["bitLength"] = bitLength of register r0
-        var stats                      #TODO not implimented
-        var engine                     #TODO partially implimented
-
         <=  Setting Up =======================================================>
         *def configSetDisplay                               Allows loading a different display interface (default loads 'class DisplaySimpleAndClean')
         *def configSetInstructionSet                        Allows loading a different instruction set (default loads 'class InstructionSetDefault')
@@ -142,89 +119,19 @@ API Detailed (Depreciated)
             def opShiftR
             def opHalt                      #TODO Still figuring out syscalls
 
-    <=  Testing defaults in Module ===========================================>
-    class TestDefault
-        def __init__
-        def testDefault                                     Tests that CPU is instatiated correctly
-        def _testInstructions                               Instantiates CPU and runs a test program to test individual instructions
-        def testInstruction                                 Tests instructions with various inputs and configurations
-        def _testVLIW
-        def testVLIW                                        Tests VLIW (Very Long Instruction Word) support
-        def _testProgram1_defaultMultiply                   Instantiates a CPU and runs a test program (multiplication)
-        def testProgram1                                    Runs (multiplication) test program with various inputs in different configurations
-
-    <=  Example Partial Implimentation of RiscV ==============================> #Work in progress
-    class RiscV                                             A more advanced example of creating a custom CPU
-        var CPU                                             Contains an initialized instance of 'class CPUsim'
-        def __init__                                        Sets up the CPU registers and memory and stuff
-        def postCycle
-        class RiscVISA
-            var instructionSet
-            var stats
-            var directives
-            def __init__                                    An advanced example of a customized instruction set
-            def opSetLessThan                               A customized instruction
-        class RiscVParser                                   A customized parser for loading RiscV like assembly code
-            def parseCode                                   The customized parser
-            def ruleContainerTokensFollowingInstruction     A customized rule
-
-    class TestRISCV
-        def __init__
-        def _testProgram1_RISCVMultiply                     Instantiates a CPU and runs a test program (multiplication)
-        def testProgram1                                    Runs (multiplication) test program with various inputs in different configurations
-
-Execution Loop:
-    #TODO document main execution loop
-
-Data Structures:
-    #register state datastructure
-    #state['key']['index'] = int(value)
-    #see 'def configConfigRegister' for full discription/initialization
-    var state : dict[
-        var key : str,
-        dict[
-            var index : int or str,
-            var value : int
-        ]
-    ]
-    state = {i : {j : 0 for j in ['index', 0]} for i in ['key']}
-
-    #register config datastructure
-    #config['key']['index']['property'] = value
-    #see 'def configConfigRegister' for full discription/initialization
-    var config : dict[
-        var key : str,
-        dict[
-            var index : int or str,
-            dict[
-                -> 'bitLength' : str        = int
-                -> 'show' : str             = bool
-                -> 'alias' : str            = list[str]
-                -> 'latencyCycles' : str    = int
-                -> 'energy' : str           = int
-                -> 'note' : str             = str
-            ]
-        ]
-    ]
-    config = {i : {j : {'bitLength':1, 'show':True, 'alias':['str1','str2'], 'latencyCycle':0, 'energy':0, 'note':'note'} for j in ['index', 0]} for i in ['key']}
-
-    #TODO include stuff on datastructures
-
 Test Cases to impliment:
     These test cases are various ways the CPU should be able to stretch and require functionality that should be implimented.
     Dafault
         Meant for teaching or just 'jumping right it'
         Not meant to be complex
         All defaults should be geared towards 'just working'
-        #TODO
-            load and store instructions
+        requires load and store instructions
     RISCV
         A real world example and usecase
         Due to the multiple versions, can demonstrait how instructions and configurations can be 'added' for each version
         Has a robust (if confusing) ecosystem and toolchains
         has psudo instructions (which should be handled at the parser level, not instruction ISA level)
-        #TODO
-            proper alias handling
+        requires proper alias handling
     Subleq
         A single instruction language
         http://mazonka.com/subleq/
@@ -275,7 +182,8 @@ Test Cases to impliment:
         This CPU is special as each pair of CPU cores shared a single FPU, thus two individual threads running Floating Point calculations would be bottlenecked by the single FPU
         Would be implimented as a single CPU with hyperThreading of two threads, where the schedualer assigns instructions to specific Execution Ports based on which hyperThread the instructions are from
             IE: thread1 can assign intructions to portInt1, portInt2, portFPU. thread2 can assign instruction to portInt3, portInt4, portFPU. Thus execution unit portFPU is shared between threads
-    #TODO a stack based CPU
+    Stack based CPU
+        IE: something similar to how WebAssembly works
     IBM Z16 CPU
         https://www.youtube.com/watch?v=z6u_oNIXFuU     # TechTechPotato - This is How IBM Will Revolutionize PC Gaming
         All the CPU cores has a massive private L2 cache (32 MB)[normal L2 cashe is usually 512 KB], but with a higher latency then standard L2 cache
@@ -313,26 +221,42 @@ Test Cases to impliment:
             IE: '--|--|--|' + '|-|-|-|-|' but not '--|--|--|' + '||||----|' (needs to prevent 'bunching up' of ticks)
             Also needs to be sudo random, such that a generator seed can be swapped out to isolate any potential undesired pattern in a battery of tests
                 IE: this program happens to work better with 'seed x' than 'seed y' because with 'seed x' the CPU and Memory Controller happen to sync up in just the right way to get better performance
-
+    Flash Memory Controller
+        Level1Techs - Pure Storage's Flash with Justin Emerson (2023-06-14)[ https://www.youtube.com/watch?v=Y2i8wZCXDF4 ][2023-06-15]
+        Typical case
+            Impliment flash memory via the MMMU, very primitive low level access
+            This could be useful for implimenting a flash drive memory controller
+        Harder use case
+            Impliment a flash storage device as a seperate instance of CPU-ASMS
+            Connect the flash storage CPU-ASMS instance to a RISK-5 CPU-ASMS instance
+                Could connect via PCI-E emulation
+                Better to connect via the 'Magic Bus Protocol'
+            This use case is for testing multiple connected CPU-ASMS instances working together
+    The Gemini Spacecraft Computer
+        Scott Manley - How Engineers Designed The First Computer To Fly In Space (2023-05-24)[ https://www.youtube.com/watch?v=OylMmZ54e7M ][2023-06-15]
+        The Virtual AGC Project Gemini — Apollo — Shuttle [ https://www.ibiblio.org/apollo/Gemini.html ][2023-06-15]
+            IE: a information resource attempting to reconstruct the details and information about the computer and space program
+            (They also apparently have an emulator available)
+        The Gemini Computer architecture is super weird, which is what makes it fun to think about
+            39-bit memory words
+        
 Terminology: #TODO
     #TODO
 
 Reference:
-    https://www.youtube.com/watch?v=B_jUXiOvMo8&t=3073s     # "Talking Milan-X with Wendell: Level1Potato" [@ 3073 s] - TechTechPotato [2022-03-21]
+    https://www.youtube.com/watch?v=B_jUXiOvMo8&t=3073s                         # "Talking Milan-X with Wendell: Level1Potato" [@ 3073 s] - TechTechPotato [2022-03-21]
         Caching Latency impacts on performance
-    https://www.youtube.com/watch?v=5lFnKYCZT5o             # "What's Virtual Memory? - Computerphile" - Computerphile [2022-06-10]
+    https://www.youtube.com/watch?v=5lFnKYCZT5o                                 # "What's Virtual Memory? - Computerphile" - Computerphile [2022-06-10]
         Overview of virtual memory
         How the ipad uses virtual memory
             uses 16 kB pages
             On initial program load, loads first few pages into memory, maps the rest of the program to virtual memory except the virtual memory refereances the program file instead of the system swap file
     Capability Hardware Enhanced RISC Instructions: CHERI Instruction-Set Architecture
         https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/cheri-risc-v.html    #overview of project website
-        https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-951.pdf     # technical document on it's implimentation over various architectures
-        https://youtu.be/osOEsllH-cs?t=868                  # "Why I Like Talking Chips: A Hot Chips 34 Recap" [@ 868 s] - TechTechPotato [2022-09-13]
+        https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-951.pdf                 # technical document on it's implimentation over various architectures
+        https://youtu.be/osOEsllH-cs?t=868                                      # "Why I Like Talking Chips: A Hot Chips 34 Recap" [@ 868 s] - TechTechPotato [2022-09-13]
 
 #TODO Stack:
-    Integrate idea from [ https://www.youtube.com/watch?v=OylMmZ54e7M ](Scott Manley - How Engineers Designed The First Computer To Fly In Space) into documentation test cases
-    Fix issue where unittests crash when attempting to display a number as large or larger then 10**4300
     create instruction helper that allows adding an immediate register (IE: you put in a number, and it passes out an immediate register address, AND adds an immediate register)
     allow ISA instructions to be referenced by a list. IE: ("add", "#") and ("add", "$") for the 6502 processor, shows two different addressing modes for the "add" instruction?
     change 'charNum' to 'colNum' in parser, add/change 'charNum' as source code number (IE: the char number of input string, not column number of that line in input string)
@@ -2390,65 +2314,6 @@ class CPUsim_v4:
 
             funcWrite(registerDestination, result)
 
-        # def opShiftR(self, 
-        #     funcRead : Callable[[int | str, int | str], int], funcWrite : Callable[[int | str, int | str], None], funcGetConfig : Callable[[int | str, int | str], dict], engineFunc : dict[str, Callable[[Any], Any]], engineStatus : dict, 
-        #     registerDestination : tuple[int | str, int | str], registerA : tuple[int | str, int | str], registerShiftOffset : tuple[int | str, int | str], arithmetic : bool = False):
-        #     """Takes registerA, shifts it right by registerShiftOffset (performs arithmetic right shift if arithmetic == True), stores result in registerDestination
-            
-        #     If registerDestination bitLength is greater then registerA bitLength:
-        #         registerA most significant bit is extended to registerDestiantion bitLength AFTER arithmetic shift right
-        #     will raise exception if value of registerShiftOffset > 8*max(256, registerDesintation bitLength, registerA bitLength) 
-        #         a wide margine of error is given as that value does need to be bounded, but a small enough margine of error could break user source code unexpectidly
-        #     """
-
-        #     assert callable(funcRead)
-        #     assert callable(funcWrite)
-        #     assert callable(funcGetConfig)
-        #     assert type(engineFunc) is dict
-        #     assert all([callable(j) for _, j in engineFunc.items()])
-        #     assert type(engineStatus) is dict
-            
-        #     assert type(registerDestination) is tuple or type(registerDestination) is list
-        #     assert len(registerDestination) == 2
-        #     assert type(registerDestination[0]) is int or type(registerDestination[0]) is str 
-        #     assert type(registerDestination[1]) is int or type(registerDestination[1]) is str
-        #     assert type(registerA) is tuple or type(registerA) is list
-        #     assert len(registerA) == 2
-        #     assert type(registerA[0]) is int or type(registerA[0]) is str 
-        #     assert type(registerA[1]) is int or type(registerA[1]) is str
-        #     assert type(registerShiftOffset) is tuple or type(registerShiftOffset) is list
-        #     assert len(registerShiftOffset) == 2
-        #     assert type(registerShiftOffset[0]) is int or type(registerShiftOffset[0]) is str 
-        #     assert type(registerShiftOffset[1]) is int or type(registerShiftOffset[1]) is str
-        #     assert type(arithmetic) is bool
-
-        #     a : int = funcRead(registerA)
-        #     amount : int = funcRead(registerShiftOffset)
-
-        #     bitLengthSource : int = funcGetConfig(registerA)
-        #     bitLengthDestination : int = funcGetConfig(registerDestination)
-
-        #     if amount > 8 * max(256, bitLengthSource, bitLengthDestination):
-        #         raise Exception("Instruction input 'registerShiftOffset' is too large to be valid")
-
-        #     result : int = a
-        #     for _ in range(amount): # shift a right WITHIN bitLengthSource
-        #         msb : int = 0
-        #         if arithmetic:
-        #             msb = 2**(bitLengthSource - 1) & result
-        #         result = result >> 1
-        #         result = result | msb
-
-        #     if bitLengthSource < bitLengthDestination: # Takes msb, and extends it out to larger bitLength bitLengthDestination if needed
-        #         msb : int = 2**(bitLengthSource - 1) & result
-        #         for _ in range(bitLengthSource - 1, bitLengthDestination):
-        #             msb = msb | (msb << 1)
-        #         result = result | msb
-            
-        #     result = result & (2**bitLengthDestination - 1)
-
-        #     funcWrite(registerDestination, result)
-
         def opShiftR(self, 
             funcRead : Callable[[tuple[int | str, int | str]], int], 
             funcWrite : Callable[[tuple[int | str, int | str], int], None], 
@@ -2513,7 +2378,6 @@ class CPUsim_v4:
             bitLengthDestination : int = funcGetConfig(registerDestination)["bitLength"]
 
             #TODO handle large numbers
-            #TODO extend 'a' BEFORE shift
 
             result : int = a
             for _ in range(amount): # shift 'a' right WITHIN bitLengthSource
