@@ -10,7 +10,9 @@ It has been moved here for continued development (**minus commit history**).
 
 ### Getting Started
 - The current prototype version is in a non-functional state
-- You can run the working legacy version ($ python LegacyV3-CPUsimulator.py). It's currently setup to show a quick demo (of what the project should look like) when run.
+- You can run the working Legacy Version ($ python LegacyV3-CPUsimulator.py). It's currently setup to show a quick demo when run.
+- Note: The Legacy Version is not compatable in any way, shape, or form with the current version due to a complete engine rewrite.
+![Legacy Screen Shot](ReadMe-Pic01.png)
 
 ### Links/References
 - Level1Techs 2020 Devember Entry [https://forum.level1techs.com/t/a-cpu-simulator-where-you-program-the-instruction-set/163339/1]
