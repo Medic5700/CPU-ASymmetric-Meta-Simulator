@@ -2327,15 +2327,89 @@ class CPUsim_v4:
         ) -> None:
             """Takes registerA, shifts it right by registerShiftOffset (performs arithmetic right shift if arithmetic == True), stores result in registerDestination
             
+            Arithmetic right shift copies the the most significant bit to fill in the shifted bits. IE: 1010 >> 1 == 1101, because the most significant bit got extended.
+
             If registerDestination bitLength is greater then registerA bitLength:
                 registerA most significant bit is extended to registerDestiantion bitLength AFTER arithmetic shift right
 
-            #TODO documentation
-
-            test_opShiftR_arithmetic03
-            test_opShiftR_arithmetic04
-            test_opShiftR_arithmetic02
-
+            Case: Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_arithmetic03
+                'r0 >> r1 = r2' with bitLength '8, 8, 8' with arithmetic = False -> '0xf0 >> 1 = 0x78'
+                -> # create registers
+                r0 = [0, 0];                    value = 0xf0; bitLength = 8
+                r1 = [0, 1];                    value = 1; bitLength = 8
+                r2 = [0, 2];                    value = 0; bitLength = 8
+                ->
+                opShiftR(
+                    funcRead                    = funcDummyRead
+                    funcWrite                   = funcDummyWrite
+                    funcGetConfig               = funcDummyConfig
+                    registerDestination         = [0, 2]
+                    registerA                   = [0, 0]
+                    registerShiftOffset         = [0, 1]
+                    arithmetic                  = False
+                )
+                -> # input
+                registerA                       = 0xf0
+                registerShiftOffset             = 1
+                arithmetic                      = False
+                ->
+                '0xf0 >> 1 = 0x78'
+                -> # output
+                registerDestination             = 0x78
+                -> # written
+                r0 = [0, 2];                    value = 0x78; bitLength = 8
+            Case: Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_arithmetic04
+                'r0 >> r1 = r2' with bitLength '8, 8, 8' with arithmetic = True -> '0xf0 >> 1 = 0xf8'
+                -> # create registers
+                r0 = [0, 0];                    value = 0xf0; bitLength = 8
+                r1 = [0, 1];                    value = 1; bitLength = 8
+                r2 = [0, 2];                    value = 0; bitLength = 8
+                ->
+                opShiftR(
+                    funcRead                    = funcDummyRead
+                    funcWrite                   = funcDummyWrite
+                    funcGetConfig               = funcDummyConfig
+                    registerDestination         = [0, 2]
+                    registerA                   = [0, 0]
+                    registerShiftOffset         = [0, 1]
+                    arithmetic                  = True
+                )
+                -> # input
+                registerA                       = 0xf0
+                registerShiftOffset             = 1
+                arithmetic                      = True
+                ->
+                '0xf0 >> 1 = 0xf8'
+                -> # output
+                registerDestination             = 0xf8
+                -> # written
+                r0 = [0, 2];                    value = 0xf8; bitLength = 8
+            Case: Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_arithmetic02
+                'r0 >> r1 = r2' with bitLength '1, 1, 1' with arithmetic = True -> '1 >> 1 = 1'
+                -> # create registers
+                r0 = [0, 0];                    value = 1; bitLength = 1
+                r1 = [0, 1];                    value = 1; bitLength = 1
+                r2 = [0, 2];                    value = 0; bitLength = 1
+                ->
+                opShiftR(
+                    funcRead                    = funcDummyRead
+                    funcWrite                   = funcDummyWrite
+                    funcGetConfig               = funcDummyConfig
+                    registerDestination         = [0, 2]
+                    registerA                   = [0, 0]
+                    registerShiftOffset         = [0, 1]
+                    arithmetic                  = True
+                )
+                -> # input
+                registerA                       = 1
+                registerShiftOffset             = 1
+                arithmetic                      = True
+                ->
+                '1 >> 1 = 1'
+                -> # output
+                registerDestination             = 1
+                -> # written
+                r0 = [0, 2];                    value = 1; bitLength = 1
             """
 
             assert callable(funcRead)
@@ -2364,26 +2438,15 @@ class CPUsim_v4:
 
             assert type(arithmetic) is bool
 
+            """
+            # The simple way to implement it, kept for reference
             a : int = funcRead(registerA)
             bitLengthSource : int = funcGetConfig(registerA)["bitLength"]
-            '''
-            #TODO preposed fix (Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_zeroBitLength03A2)
-                # iff registerA bitLength == 0 
-                # implies registerA value == 0
-                # implies mostSignificantBit == 0
-                # therefor (registerA bitLength == 0) === (registerA bitLength == 1 AND registerA vlue == 0)
-                bitLengthSource : int = max(1, funcGetConfig(registerA)["bitLength"])
-            '''
+            # Note will fail Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_zeroBitLength03A2
+            
             amount : int = funcRead(registerShiftOffset)
             bitLengthDestination : int = funcGetConfig(registerDestination)["bitLength"]
-
-            #TODO handle large numbers
-            #TODO extend 'a' BEFORE shift
-            '''
-            #TODO speed up handling large numbers
-                # unittest Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_largeRegisterSize05A2 takes 4000 seconds +
-            '''
-
+            
             result : int = a
             for _ in range(amount): # shift 'a' right WITHIN bitLengthSource
                 msb : int = 0
@@ -2391,13 +2454,47 @@ class CPUsim_v4:
                     msb = 2**(bitLengthSource - 1) & result
                 result = result >> 1
                 result = result | msb
-
+            
             if arithmetic and (bitLengthSource < bitLengthDestination): # Takes msb, and extends it out to larger bitLength bitLengthDestination if needed
                 msb : int = 2**(bitLengthSource - 1) & result
                 for _ in range(bitLengthSource - 1, bitLengthDestination):
                     msb = msb | (msb << 1)
                 result = result | msb
             
+            result = result & (2**bitLengthDestination - 1)
+            
+            funcWrite(registerDestination, result)
+            """
+
+            a : int = funcRead(registerA)
+            bitLengthSource : int = max(1, funcGetConfig(registerA)["bitLength"])
+            '''
+            fix for unittest Test_InstructionSetDefault_BuildingBlocks.test_opShiftR_zeroBitLength03A2
+                'r0 >> r1 = r2' with bitLength '0, 8, 8' with arithmetic = True -> '0 >> 1 = 0'
+                iff registerA bitLength == 0 
+                implies registerA value == 0
+                implies mostSignificantBit == 0
+                therefor (registerA bitLength == 0) === (registerA bitLength == 1 AND registerA value == 0)
+                
+            bitLengthSource : int = funcGetConfig(registerA)["bitLength"]
+            ->
+            bitLengthSource : int = max(1, funcGetConfig(registerA)["bitLength"])
+            '''
+
+            amount : int = funcRead(registerShiftOffset)
+            bitLengthDestination : int = funcGetConfig(registerDestination)["bitLength"]
+
+            result : int = a >> amount # Logical shift right
+            # fills in the arithmetic shift right
+            if arithmetic and ((2**(bitLengthSource - 1) & a) != 0):
+                t1 : int = 2**(min(bitLengthSource, amount)) - 1
+                t1 = t1 << max(bitLengthSource - amount, 0)
+                result = result | t1
+            # extends most significant bit if needed due to destination bitlength difference
+            if arithmetic and (bitLengthSource < bitLengthDestination) and ((2**(bitLengthSource - 1) & result) != 0):
+                t2 : int = (2**(bitLengthDestination - bitLengthSource) - 1) << bitLengthSource
+                result = result | t2
+
             result = result & (2**bitLengthDestination - 1)
 
             funcWrite(registerDestination, result)
