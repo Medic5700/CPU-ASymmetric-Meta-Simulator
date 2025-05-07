@@ -12312,7 +12312,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -12383,7 +12383,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -12454,7 +12454,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = -1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -12527,7 +12527,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            '_imm', 0,                              value = 0, bitLength = 1)
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
@@ -12601,7 +12601,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            '_imm', 0,                              value = 0, bitLength = 1)
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
@@ -12675,7 +12675,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = -1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            '_imm', 0,                              value = 0, bitLength = 1)
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
@@ -12751,7 +12751,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 0b10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            '_imm', 0,                              value = 1, bitLength = 1)
         MMMU.createRegister(            '_imm', 1,                              value = 1, bitLength = 1)
 
@@ -12828,7 +12828,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 0b10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            '_imm', 0,                              value = 1, bitLength = 1)
         MMMU.createRegister(            '_imm', 2,                              value = 1, bitLength = 1)
 
@@ -12905,7 +12905,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = 0b10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            '_imm', 1,                              value = 1, bitLength = 1)
         MMMU.createRegister(            '_imm', 2,                              value = 1, bitLength = 1)
 
@@ -12978,7 +12978,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         value : int = 0xffffffff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -13049,7 +13049,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         value : int = -0x1ffffffff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -13120,7 +13120,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         value : int = -0x100000000
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -13191,7 +13191,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         value : int = 2**(2**20 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
 
         returnValue : tuple[str, int] = self.ISA.microInjectImmediateValue(
             funcRead                                                            = MMMU.dummyReadWrapper,
@@ -13343,7 +13343,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAdd_Exception_registerDestinationNotInMMMU(self):
         """tests opAdd passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -13360,7 +13360,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAdd_Exception_registerANotInMMMU(self):
         """tests opAdd passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -13377,7 +13377,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAdd_Exception_registerBNotInMMMU(self):
         """tests opAdd passes through a raised MMMUAccessError exception when registerB is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -13420,7 +13420,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opAdd(
@@ -13492,7 +13492,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opAdd(
@@ -13567,7 +13567,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -13646,7 +13646,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -13725,7 +13725,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -13804,7 +13804,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -13883,7 +13883,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -13962,7 +13962,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -14041,7 +14041,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -14120,7 +14120,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -14199,7 +14199,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -14278,7 +14278,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -14357,7 +14357,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -14436,7 +14436,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -14515,7 +14515,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -14594,7 +14594,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -14673,7 +14673,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -14752,7 +14752,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -14831,7 +14831,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -14910,7 +14910,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -14989,7 +14989,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -15068,7 +15068,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -15147,7 +15147,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -15226,7 +15226,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0a
         r2_out : int = 0x12
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -15305,7 +15305,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0a
         r2_out : int = 0x12
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -15384,7 +15384,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0a
         r2_out : int = 0x12
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -15463,7 +15463,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x00
         r2_out : int = 0x00
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -15542,7 +15542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x00
         r2_out : int = 0x00
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -15621,7 +15621,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x00
         r2_out : int = 0x00
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -15700,7 +15700,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -15779,7 +15779,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -15858,7 +15858,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -15937,7 +15937,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x00
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -16016,7 +16016,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x00
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -16095,7 +16095,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x00
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -16174,7 +16174,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x00
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -16253,7 +16253,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x00
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -16332,7 +16332,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x02
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -16411,7 +16411,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x1e
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -16490,7 +16490,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x1e
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -16569,7 +16569,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x1e
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -16648,7 +16648,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**19)
         r2_out : int = 2**(2**19) + 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -16727,7 +16727,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**19)
         r2_out : int = 2**(2**19 + 1)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -16806,7 +16806,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0xfe
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -16887,7 +16887,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**8 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -16968,7 +16968,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**512 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 512)
@@ -17049,7 +17049,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**2048 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 2048)
@@ -17128,7 +17128,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -17207,7 +17207,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -17286,7 +17286,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 2**2048 - 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -17365,7 +17365,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 2**2048 - 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -17444,7 +17444,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x3f
         r2_out : int = 0x3b
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -17525,7 +17525,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x + y) & (2**8 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -17606,7 +17606,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x + y) & (2**16 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 16)
@@ -17685,7 +17685,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -17764,7 +17764,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -17843,7 +17843,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xf0
         r2_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -17922,7 +17922,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x02
         r2_out : int = 0x05
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -18001,7 +18001,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x01
         r2_out : int = 0x00
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -18203,7 +18203,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAddCarryOverflow_Exception_registerDestinationNotInMMMU(self):
         """tests opAddCarryOverflow passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -18222,7 +18222,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAddCarryOverflow_Exception_registerANotInMMMU(self):
         """tests opAddCarryOverflow passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -18241,7 +18241,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAddCarryOverflow_Exception_registerBNotInMMMU(self):
         """tests opAddCarryOverflow passes through a raised MMMUAccessError exception when registerB is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -18260,7 +18260,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAddCarryOverflow_Exception_registerCarryNotInMMMU(self):
         """tests opAddCarryOverflow passes through a raised MMMUAccessError exception when registerCarry is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -18279,7 +18279,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAddCarryOverflow_Exception_registerOverflowNotInMMMU(self):
         """tests opAddCarryOverflow passes through a raised MMMUAccessError exception when registerOverflow is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -18328,7 +18328,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opAddCarryOverflow(
@@ -18406,7 +18406,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opAddCarryOverflow(
@@ -18487,7 +18487,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -18572,7 +18572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -18657,7 +18657,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -18742,7 +18742,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -18830,7 +18830,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 0
         c0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -18922,7 +18922,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 1
         c0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19014,7 +19014,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 1
         c0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19106,7 +19106,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 0
         c0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19198,7 +19198,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19290,7 +19290,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 1
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19382,7 +19382,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 1
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19474,7 +19474,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2_out : int = 0
         o0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19569,7 +19569,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19668,7 +19668,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19767,7 +19767,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19866,7 +19866,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -19965,7 +19965,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -20064,7 +20064,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -20163,7 +20163,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -20262,7 +20262,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -20361,7 +20361,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -20460,7 +20460,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -20559,7 +20559,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -20658,7 +20658,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -20757,7 +20757,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -20856,7 +20856,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -20955,7 +20955,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -21054,7 +21054,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -21153,7 +21153,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -21252,7 +21252,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -21351,7 +21351,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
                 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -21450,7 +21450,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -21549,7 +21549,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -21648,7 +21648,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -21747,7 +21747,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -21846,7 +21846,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -21945,7 +21945,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c1024_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -22044,7 +22044,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o1024_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -22143,7 +22143,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -22242,7 +22242,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -22341,7 +22341,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -22440,7 +22440,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -22539,7 +22539,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -22638,7 +22638,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -22737,7 +22737,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -22836,7 +22836,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -22935,7 +22935,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -23027,7 +23027,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xff
         r0_out : int = 0xfe
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opAddCarryOverflow(
@@ -23114,7 +23114,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r0_out : int = 0x00
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -23205,7 +23205,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
         MMMU.createRegister(            'c', 0,                                 value = 0, bitLength = 8)
@@ -23304,7 +23304,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 c0_out : int = 1 if r0 + r1 >= 2**8 else 0
                 o0_out : int = 1 if ((r0 & 2**(8 - 1) == r1 & 2**(8 - 1)) and (r0 & 2**(8 - 1) != r2_out & 2**(8 - 1))) else 0
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -23405,7 +23405,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 c0_out : int = 1 if r0 + r1 >= 2**512 else 0
                 o0_out : int = 1 if ((r0 & 2**(512 - 1) == r1 & 2**(512 - 1)) and (r0 & 2**(512 - 1) != r2_out & 2**(512 - 1))) else 0
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 512)
@@ -23506,7 +23506,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 c0_out : int = 0
                 o0_out : int = 0
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 2048)
@@ -23605,7 +23605,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -23704,7 +23704,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -23803,7 +23803,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -23902,7 +23902,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 0
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -24000,7 +24000,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -24101,7 +24101,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 c0_out : int = 1 if (x + y) > (2**8 - 1) else 0
                 o0_out : int = 1 if ((x & 2**(8 - 1) == y & 2**(8 - 1)) and (x & 2**(8 - 1) != r2_out & 2**(8 - 1))) else 0
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -24194,7 +24194,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -24279,7 +24279,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -24364,7 +24364,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xf0
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0x00, bitLength = 8)
@@ -24451,7 +24451,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x + y) & (2**8 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -24542,7 +24542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0_out : int = 1
         o0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2)
@@ -24704,7 +24704,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opMultiply_Exception_registerDestinationNotInMMMU(self):
         """tests opMultiply passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -24721,7 +24721,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opMultiply_Exception_registerANotInMMMU(self):
         """tests opMultiply passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -24738,7 +24738,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opMultiply_Exception_registerBNotInMMMU(self):
         """tests opMultiply passes through a raised MMMUAccessError exception when registerB is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -24781,7 +24781,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opMultiply(
@@ -24853,7 +24853,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opMultiply(
@@ -24928,7 +24928,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25007,7 +25007,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25086,7 +25086,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25165,7 +25165,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25244,7 +25244,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -25323,7 +25323,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 8
         r2_out : int = 64
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -25402,7 +25402,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 8
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -25481,7 +25481,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -25560,7 +25560,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 8
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -25639,7 +25639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25718,7 +25718,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25797,7 +25797,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -25876,7 +25876,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -25955,7 +25955,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26034,7 +26034,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -26113,7 +26113,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26192,7 +26192,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26271,7 +26271,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -26350,7 +26350,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26429,7 +26429,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26508,7 +26508,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -26587,7 +26587,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x04
         r2_out : int = 0x10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -26666,7 +26666,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x04
         r2_out : int = 0x10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -26745,7 +26745,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x04
         r1024_out : int = 0x10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -26824,7 +26824,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26903,7 +26903,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -26982,7 +26982,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -27061,7 +27061,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -27140,7 +27140,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -27219,7 +27219,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -27298,7 +27298,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -27377,7 +27377,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -27456,7 +27456,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -27535,7 +27535,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -27614,7 +27614,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -27693,7 +27693,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -27772,7 +27772,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x80
         r2_out : int = 0x00
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -27851,7 +27851,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x80
         r2_out : int = 0x00
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -27930,7 +27930,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x80
         r2_out : int = 0x4000
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -28009,7 +28009,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0x01
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -28088,7 +28088,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**18)
         r2_out : int = 2**(2**19)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -28164,7 +28164,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x08
         r0_out : int = 0x40
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opMultiply(
@@ -28241,7 +28241,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = 2**(x + y) & (2**8 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -28322,7 +28322,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = 2**(x + y) & (2**512 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 512)
@@ -28403,7 +28403,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = 2**(x + y)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 2048)
@@ -28482,7 +28482,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -28561,7 +28561,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -28640,7 +28640,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -28719,7 +28719,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -28798,7 +28798,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x3f
         r2_out : int = 0x3e04
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 16)
@@ -28879,7 +28879,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x * y) & (2**8 - 1)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -28960,7 +28960,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x * y)
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 16)
@@ -29039,7 +29039,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x08
         r2_out : int = 0x40
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -29118,7 +29118,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x80
         r2_out : int = 2**14
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 16)
@@ -29197,7 +29197,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x80
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 16)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 16)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -29276,7 +29276,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0xfe01
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 16)
@@ -29408,7 +29408,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opTwosCompliment_Exception_registerDestinationNotInMMMU(self):
         """tests opTwosCompliment passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -29424,7 +29424,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opTwosCompliment_Exception_registerANotInMMMU(self):
         """tests opTwosCompliment passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -29464,7 +29464,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opTwosCompliment(
@@ -29532,7 +29532,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opTwosCompliment(
@@ -29601,7 +29601,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -29672,7 +29672,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -29743,7 +29743,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 0)
 
@@ -29814,7 +29814,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -29885,7 +29885,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -29956,7 +29956,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 0)
 
@@ -30027,7 +30027,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -30098,7 +30098,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -30169,7 +30169,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xff
         r1_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -30240,7 +30240,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -30311,7 +30311,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xf0
         r1_out : int = 0xff10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 16)
 
@@ -30382,7 +30382,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xf0f0
         r1_out : int = 0x10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 16)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -30453,7 +30453,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x0f
         r1_out : int = 0xf1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -30524,7 +30524,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x0f
         r1024_out : int = 0xf1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
 
@@ -30595,7 +30595,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -30666,7 +30666,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1024)
 
@@ -30737,7 +30737,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -30808,7 +30808,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 2**1024 - 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1024)
 
@@ -30879,7 +30879,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2**2**20 - 1
         r1_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -30950,7 +30950,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 2**2**20 - 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -31021,7 +31021,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2**2**20 - 1
         r1_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -31092,7 +31092,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 2**2**20 - 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -31169,7 +31169,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 number : int = sum([bit << i for i, bit in enumerate(bitArray)]) # converts back to integer
                 r1_out : int = (number + 1) & (2**8 - 1) # add one to be twos compliment, and trunk
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 8)
 
@@ -31246,7 +31246,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 number : int = sum([bit << i for i, bit in enumerate(bitArray)]) # converts back to integer
                 r1_out : int = (number + 1) & (2**512 - 1) # add one to be twos compliment, and trunk
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 512)
 
@@ -31323,7 +31323,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 number : int = sum([bit << i for i, bit in enumerate(bitArray)]) # converts back to integer
                 r1_out : int = (number + 1) & (2**2048 - 1) # add one to be twos compliment, and trunk
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 2048)
 
@@ -31394,7 +31394,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 0]) + 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2048)
 
@@ -31465,7 +31465,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 1]) + 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2048)
 
@@ -31542,7 +31542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 number : int = sum([bit << i for i, bit in enumerate(bitArray)]) # converts back to integer
                 r1_out : int = (number + 1) & (2**8 - 1) # add one to be twos compliment, and trunk
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 8)
 
@@ -31613,7 +31613,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -31684,7 +31684,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -31755,7 +31755,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xf0
         r1_out : int = 0x10
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -31826,7 +31826,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x02
         r1_out : int = 0xfe
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -31897,7 +31897,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xfe
         r1_out : int = 0x2
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 4)
 
@@ -31968,7 +31968,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x1
         r1_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 4)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -32039,7 +32039,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x4
         r1_out : int = 0xfc
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 4)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -32187,7 +32187,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAND_Exception_registerDestinationNotInMMMU(self):
         """tests opAND passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -32204,7 +32204,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAND_Exception_registerANotInMMMU(self):
         """tests opAND passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -32221,7 +32221,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opAND_Exception_registerBNotInMMMU(self):
         """tests opAND passes through a raised MMMUAccessError exception when registerB is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -32264,7 +32264,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opAND(
@@ -32336,7 +32336,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opAND(
@@ -32411,7 +32411,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -32490,7 +32490,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -32569,7 +32569,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -32648,7 +32648,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -32727,7 +32727,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -32806,7 +32806,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -32885,7 +32885,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -32964,7 +32964,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -33043,7 +33043,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 0)
@@ -33122,7 +33122,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33201,7 +33201,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33280,7 +33280,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -33359,7 +33359,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33438,7 +33438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33517,7 +33517,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -33596,7 +33596,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33675,7 +33675,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33754,7 +33754,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -33833,7 +33833,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33912,7 +33912,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -33991,7 +33991,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -34070,7 +34070,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x0f
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -34149,7 +34149,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x0f
         r2_out : int = 0x0f
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -34228,7 +34228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r1024_out : int = 0x0f
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024_out, bitLength = 8)
@@ -34307,7 +34307,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -34386,7 +34386,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -34465,7 +34465,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1024)
@@ -34544,7 +34544,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -34623,7 +34623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -34702,7 +34702,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1024)
@@ -34781,7 +34781,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -34860,7 +34860,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -34939,7 +34939,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1024)
@@ -35018,7 +35018,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -35097,7 +35097,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1)
@@ -35176,7 +35176,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1024)
@@ -35255,7 +35255,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x0f
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -35334,7 +35334,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x0f
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -35413,7 +35413,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x0f
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 1024)
@@ -35492,7 +35492,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 2**(2**20 - 1)
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 2**20)
@@ -35571,7 +35571,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 2**20)
@@ -35652,7 +35652,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = 1 << y
                 r2_out : int = r0 & r1
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = r2_out, bitLength = 8)
@@ -35733,7 +35733,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = 1 << y
                 r2_out : int = r0 & r1
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = r2_out, bitLength = 512)
@@ -35814,7 +35814,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = 1 << y
                 r2_out : int = r0 & r1
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = r2_out, bitLength = 2048)
@@ -35893,7 +35893,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 1])
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 2048)
@@ -35972,7 +35972,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 0])
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 2048)
@@ -36051,7 +36051,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 2048)
@@ -36130,7 +36130,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 2048)
@@ -36209,7 +36209,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x3f
         r2_out : int = 0x3c
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -36290,7 +36290,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = x & y
 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = r2_out, bitLength = 8)
@@ -36369,7 +36369,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -36448,7 +36448,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -36527,7 +36527,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xf0
         r2_out : int = 0
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -36606,7 +36606,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x02
         r2_out : int = 0x02
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = r2_out, bitLength = 8)
@@ -36758,7 +36758,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opOR_Exception_registerDestinationNotInMMMU(self):
         """tests opOR passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -36775,7 +36775,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opOR_Exception_registerANotInMMMU(self):
         """tests opOR passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -36793,7 +36793,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         """tests opOR passes through a raised MMMUAccessError exception when registerB is not in the MMMU"""
         
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -36836,7 +36836,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opOR(
@@ -36908,7 +36908,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opOR(
@@ -36983,7 +36983,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -37062,7 +37062,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -37141,7 +37141,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -37220,7 +37220,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -37299,7 +37299,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -37378,7 +37378,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -37457,7 +37457,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -37536,7 +37536,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -37615,7 +37615,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -37694,7 +37694,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -37773,7 +37773,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -37852,7 +37852,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -37931,7 +37931,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38010,7 +38010,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38089,7 +38089,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -38168,7 +38168,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38247,7 +38247,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38326,7 +38326,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -38405,7 +38405,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38484,7 +38484,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38563,7 +38563,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -38642,7 +38642,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -38721,7 +38721,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x0f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -38800,7 +38800,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r1024_out : int = 0xff
 
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -38879,7 +38879,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -38958,7 +38958,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39037,7 +39037,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -39116,7 +39116,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39195,7 +39195,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39274,7 +39274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -39353,7 +39353,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39432,7 +39432,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39511,7 +39511,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -39590,7 +39590,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39669,7 +39669,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -39748,7 +39748,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -39827,7 +39827,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -39906,7 +39906,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -39985,7 +39985,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -40064,7 +40064,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 2**(2**20 - 1)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -40143,7 +40143,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 2**(2**20 - 1) + 2**(2**20 - 2)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -40224,7 +40224,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = r0 | r1
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -40305,7 +40305,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = r0 | r1
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 512)
@@ -40386,7 +40386,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = r0 | r1
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 2048)
@@ -40465,7 +40465,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 1])
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -40544,7 +40544,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 0])
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -40623,7 +40623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 2**2048 - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -40702,7 +40702,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 2**2048 - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -40781,7 +40781,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x3f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -40862,7 +40862,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = x | y
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -40941,7 +40941,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -41020,7 +41020,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -41099,7 +41099,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xf0
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -41178,7 +41178,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x02
         r2_out : int = 0x03
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -41330,7 +41330,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opXOR_Exception_registerDestinationNotInMMMU(self):
         """tests opXOR passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -41347,7 +41347,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opXOR_Exception_registerANotInMMMU(self):
         """tests opXOR passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -41364,7 +41364,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opXOR_Exception_registerBNotInMMMU(self):
         """tests opXOR passes through a raised MMMUAccessError exception when registerB is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -41407,7 +41407,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opXOR(
@@ -41479,7 +41479,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opXOR(
@@ -41554,7 +41554,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -41633,7 +41633,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -41712,7 +41712,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -41791,7 +41791,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -41870,7 +41870,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -41949,7 +41949,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -42028,7 +42028,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0x0f
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -42107,7 +42107,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -42186,7 +42186,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -42265,7 +42265,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -42344,7 +42344,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -42423,7 +42423,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -42502,7 +42502,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -42581,7 +42581,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -42660,7 +42660,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -42739,7 +42739,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -42818,7 +42818,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -42897,7 +42897,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -42976,7 +42976,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -43055,7 +43055,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -43134,7 +43134,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -43213,7 +43213,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -43292,7 +43292,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x0f
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -43371,7 +43371,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r1024_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -43450,7 +43450,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -43529,7 +43529,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -43608,7 +43608,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -43687,7 +43687,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -43766,7 +43766,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -43845,7 +43845,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -43924,7 +43924,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -44003,7 +44003,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -44082,7 +44082,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -44161,7 +44161,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -44240,7 +44240,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -44319,7 +44319,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -44398,7 +44398,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -44477,7 +44477,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -44556,7 +44556,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x0f
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -44635,7 +44635,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -44714,7 +44714,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 2**(2**20 - 1) + 2**(2**20 - 2)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -44795,7 +44795,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = r0 ^ r1
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -44876,7 +44876,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = r0 ^ r1
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 512)
@@ -44957,7 +44957,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = r0 ^ r1
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 2048)
@@ -45036,7 +45036,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -45115,7 +45115,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -45194,7 +45194,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 2**2048 - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -45273,7 +45273,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 2**2048 - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -45352,7 +45352,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x3f
         r2_out : int = 0xc3
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -45433,7 +45433,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = x ^ y
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -45512,7 +45512,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -45591,7 +45591,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -45670,7 +45670,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xf0
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -45749,7 +45749,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x02
         r2_out : int = 0x01
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -45879,7 +45879,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opNOT_Exception_registerDestinationNotInMMMU(self):
         """tests opNOT passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -45895,7 +45895,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opNOT_Exception_registerANotInMMMU(self):
         """tests opNOT passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -45935,7 +45935,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opNOT(
@@ -46003,7 +46003,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opNOT(
@@ -46072,7 +46072,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -46143,7 +46143,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -46214,7 +46214,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 0)
 
@@ -46285,7 +46285,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x0f
         r1_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -46356,7 +46356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -46427,7 +46427,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x0f
         r1_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 0)
 
@@ -46498,7 +46498,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -46569,7 +46569,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -46640,7 +46640,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xff
         r1_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -46711,7 +46711,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0xfe
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -46782,7 +46782,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x0f
         r1_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -46853,7 +46853,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x0f
         r1024_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
 
@@ -46924,7 +46924,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -46995,7 +46995,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 2**1024 - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1024)
 
@@ -47066,7 +47066,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1)
 
@@ -47137,7 +47137,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = (2**1024 - 1) - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1024)
 
@@ -47208,7 +47208,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x0f
         r1_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -47279,7 +47279,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x0f
         r1_out : int = (2**1024 - 1) - 0x0f
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 1024)
 
@@ -47350,7 +47350,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 2**(2**20) - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -47421,7 +47421,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2**(2**20) - 1
         r1_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -47492,7 +47492,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2**(2**19) - 1
         r1_out : int = 2**(2**20) - 1 - (2**(2**19) - 1)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -47563,7 +47563,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2**(2**20) - 1 - (2**(2**19) - 1)
         r1_out : int = 2**(2**19) - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2**20)
 
@@ -47636,7 +47636,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r0 : int = (1 << x)
                 r1_out : int = r0 ^ 0xff
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 8)
 
@@ -47709,7 +47709,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r0 : int = (1 << x)
                 r1_out : int = r0 ^ (2**512 - 1)
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 512)
 
@@ -47782,7 +47782,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r0 : int = (1 << x)
                 r1_out : int = r0 ^ (2**2048 - 1)
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 2048)
 
@@ -47853,7 +47853,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 0])
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2048)
 
@@ -47924,7 +47924,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 1])
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 2048)
 
@@ -47997,7 +47997,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r0 : int = x
                 r1_out : int = r0 ^ 0xff
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = 0, bitLength = 8)
 
@@ -48068,7 +48068,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r1_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -48139,7 +48139,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r1_out : int = 0xfe
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -48210,7 +48210,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xf0
         r1_out : int = 0x0f
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -48281,7 +48281,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x02
         r1_out : int = 0xfd
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -48352,7 +48352,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0xfe
         r1_out : int = 0x1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 4)
 
@@ -48423,7 +48423,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0x01
         r1_out : int = 0xfe
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 4)
         MMMU.createRegister(            0, 1,                                   value = 0, bitLength = 8)
 
@@ -48573,7 +48573,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opShiftL_Exception_registerDestinationNotInMMMU(self):
         """tests opShiftL passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -48590,7 +48590,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opShiftL_Exception_registerANotInMMMU(self):
         """tests opShiftL passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -48607,7 +48607,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opShiftL_Exception_registerShiftOffsetNotInMMMU(self):
         """tests opShiftL passes through a raised MMMUAccessError exception when registerShiftOffset is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -48650,7 +48650,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opShiftL(
@@ -48722,7 +48722,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opShiftL(
@@ -48794,7 +48794,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opShiftL(
@@ -48866,7 +48866,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2
         r0_out : int = 8
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opShiftL(
@@ -48938,7 +48938,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 3
         r0_out : int = 24
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opShiftL(
@@ -49013,7 +49013,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -49092,7 +49092,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -49171,7 +49171,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -49250,7 +49250,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -49329,7 +49329,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -49408,7 +49408,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -49487,7 +49487,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -49566,7 +49566,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -49645,7 +49645,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -49724,7 +49724,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -49803,7 +49803,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -49882,7 +49882,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -49961,7 +49961,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -50040,7 +50040,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -50119,7 +50119,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -50198,7 +50198,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -50277,7 +50277,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -50356,7 +50356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -50435,7 +50435,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -50514,7 +50514,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -50593,7 +50593,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -50672,7 +50672,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -50751,7 +50751,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x04
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -50830,7 +50830,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 : int = 0x04
         r2_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1024, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -50909,7 +50909,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x04
         r1024_out : int = 0xf0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -50988,7 +50988,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51067,7 +51067,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51146,7 +51146,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -51225,7 +51225,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51304,7 +51304,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51383,7 +51383,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -51462,7 +51462,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51541,7 +51541,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51620,7 +51620,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -51699,7 +51699,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51778,7 +51778,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -51857,7 +51857,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -51936,7 +51936,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0xfe
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -52015,7 +52015,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -52094,7 +52094,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 0xff << 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -52173,7 +52173,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xff
         r2_out : int = 2**0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -52252,7 +52252,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xffff
         r2_out : int = 2**0xffff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -52331,7 +52331,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0xffff
         r2_out : int = 2**0xffff + 2**0x10000
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -52410,7 +52410,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**18
         r2_out : int = 2**(2**18)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -52491,7 +52491,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = (r0 << r1) & 0xff
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -52572,7 +52572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = (r0 << r1) & (2**512 - 1) if r1 <= 512 else 0  # if/else prevents extreme memory use
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 512)
@@ -52653,7 +52653,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = (1 << y)
                 r2_out : int = (r0 << r1) & (2**2048 - 1) if r1 <= 2048 else 0 # if/else prevents extreme memory use
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 512)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 512)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 2048)
@@ -52732,7 +52732,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -52811,7 +52811,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -52890,7 +52890,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -52969,7 +52969,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2048)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2048)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2048)
@@ -53048,7 +53048,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0x3f
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -53129,7 +53129,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x << y) & (2**8 - 1)
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 8)
@@ -53210,7 +53210,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 r1 : int = y
                 r2_out : int = (x << y) & (2**1024 - 1)
                 
-                MMMU : self.dummyMMMU = self.dummyMMMU()
+                MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
                 MMMU.createRegister(    0, 0,                                   value = r0, bitLength = 8)
                 MMMU.createRegister(    0, 1,                                   value = r1, bitLength = 8)
                 MMMU.createRegister(    0, 2,                                   value = 0, bitLength = 1024)
@@ -53289,7 +53289,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -53368,7 +53368,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -53447,7 +53447,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 7
         r2_out : int = 128
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -53526,7 +53526,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 8
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -53605,7 +53605,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 7
         r2_out : int = 128
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -53684,7 +53684,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**20 - 1
         r2_out : int = 2**(2**20 - 1)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -53763,7 +53763,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 2**20
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -53939,7 +53939,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opShiftR_Exception_registerDestinationNotInMMMU(self):
         """tests opShiftR passes through a raised MMMUAccessError exception when registerDestination is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -53957,7 +53957,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opShiftR_Exception_registerANotInMMMU(self):
         """tests opShiftR passes through a raised MMMUAccessError exception when registerA is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -53975,7 +53975,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
     def test_opShiftR_Exception_registerShiftOffsetNotInMMMU(self):
         """tests opShiftR passes through a raised MMMUAccessError exception when registerShiftOffset is not in the MMMU"""
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = 0, bitLength = 8) # creates registerNull
 
         register : list[str | int, str | int] = [1, 1] # register not in MMMU
@@ -54021,7 +54021,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 0
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opShiftR(
@@ -54096,7 +54096,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
 
         returnValue : None = self.ISA.opShiftR(
@@ -54171,7 +54171,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 1
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opShiftR(
@@ -54247,7 +54247,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 2
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opShiftR(
@@ -54323,7 +54323,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 : int = 3
         r0_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
 
         returnValue : None = self.ISA.opShiftR(
@@ -54402,7 +54402,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -54485,7 +54485,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -54568,7 +54568,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -54651,7 +54651,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -54734,7 +54734,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -54817,7 +54817,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -54900,7 +54900,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -54983,7 +54983,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0x78
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55066,7 +55066,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0xf8
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55149,7 +55149,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -55232,7 +55232,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55315,7 +55315,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55398,7 +55398,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55481,7 +55481,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -55564,7 +55564,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -55647,7 +55647,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55730,7 +55730,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 0)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55813,7 +55813,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 2
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 0)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -55896,7 +55896,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 0)
@@ -55979,7 +55979,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56062,7 +56062,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56145,7 +56145,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -56228,7 +56228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56311,7 +56311,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56394,7 +56394,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -56477,7 +56477,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56560,7 +56560,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56643,7 +56643,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -56726,7 +56726,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56809,7 +56809,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -56892,7 +56892,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -56975,7 +56975,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57058,7 +57058,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57141,7 +57141,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -57224,7 +57224,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57307,7 +57307,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57390,7 +57390,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -57473,7 +57473,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57556,7 +57556,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57639,7 +57639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -57722,7 +57722,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57805,7 +57805,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -57888,7 +57888,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0xff
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -57971,7 +57971,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0x7f
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 1024,                                value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -58054,7 +58054,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0x7f
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = r1, bitLength = 8)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 8)
@@ -58137,7 +58137,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0x7f
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 8)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 8)
         MMMU.createRegister(            0, 1024,                                value = 0, bitLength = 8)
@@ -58220,7 +58220,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -58303,7 +58303,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -58386,7 +58386,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -58469,7 +58469,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -58552,7 +58552,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -58635,7 +58635,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -58718,7 +58718,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -58801,7 +58801,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -58884,7 +58884,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -58967,7 +58967,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59050,7 +59050,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59133,7 +59133,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -59216,7 +59216,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59299,7 +59299,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59382,7 +59382,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -59465,7 +59465,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59548,7 +59548,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59631,7 +59631,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 0
         r2_out : int = (2**1024-1)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -59714,7 +59714,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59797,7 +59797,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -59880,7 +59880,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -59963,7 +59963,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 0
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1024)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -60046,7 +60046,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1024)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1)
@@ -60129,7 +60129,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = 1
         r2_out : int = (2**1024-1)
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 1)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 1)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 1024)
@@ -60212,7 +60212,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = (2**20 - 1)
         r2_out : int = 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
@@ -60295,7 +60295,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 : int = (2**20 - 1)
         r2_out : int = 2**(2**20) - 1
         
-        MMMU : self.dummyMMMU = self.dummyMMMU()
+        MMMU : Test_InstructionSetDefault_BuildingBlocks.dummyMMMU = self.dummyMMMU()
         MMMU.createRegister(            0, 0,                                   value = r0, bitLength = 2**20)
         MMMU.createRegister(            0, 1,                                   value = r1, bitLength = 2**20)
         MMMU.createRegister(            0, 2,                                   value = 0, bitLength = 2**20)
