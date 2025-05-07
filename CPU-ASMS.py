@@ -620,7 +620,7 @@ class NodeParse(ParseNode): # Named NodeParse instead of ParseNode to avoid conf
         if index == None:
             raise Exception("node is not found, can not remove. node = \n" + str(node))
 
-        removeNode : self.__class__ = self.child[index]
+        removeNode : NodeParse = self.child[index]
 
         # logging.debug(debugHelper(inspect.currentframe()) + "attempting to remove node"+ "\n" + str((
         #         self.type,
@@ -829,12 +829,12 @@ class CPUsim_v4:
         assert type(setup) is str or type(setup) is None
         assert setup in ["default", "default+", None]
 
-        self._InstructionSet_Instance : Type[self.InstructionSetDefault] = None
-        self._Display_Instance : Type[self.DisplaySilent] = None
-        self._Parser_Instance : Type[self.ParserDefault] = None
-        self._MMMU_Instance : Type[self.MMMUDefault] = None
-        self._Compiler_Instance : Type[self.CompilerDefault] = None
-        self._Decoder_Instance : Type[self.DecoderDefault] = None
+        self._InstructionSet_Instance : Type[CPUsim_v4.InstructionSetDefault] = None
+        self._Display_Instance : Type[CPUsim_v4.DisplaySilent] = None
+        self._Parser_Instance : Type[CPUsim_v4.ParserDefault] = None
+        self._MMMU_Instance : Type[CPUsim_v4.MMMUDefault] = None
+        self._Compiler_Instance : Type[CPUsim_v4.CompilerDefault] = None
+        self._Decoder_Instance : Type[CPUsim_v4.DecoderDefault] = None
 
         self._postTickMemoryAdjuster : Callable[[], None] = None
 
@@ -5151,6 +5151,7 @@ class CPUsim_v4:
                 It's probably better if that memory is accessed through a function instead of moving around massive arrays of diplicate data with each instruction call...
                 will be harder to learn to use if not implimented properly
             Will require rewriting self.config and everything that goes with it
+            Needs to have a 'dump register', somewhere to put unwanted return data from a function. Similar to python's "_" variable.
 
         Terminoligy: #Because damnit I'll confuse myself if I don't put time into naming things right
             Registers - Generic term used for Memory Elements that are registers implying most instructionSet instruction interact directly with these Memory Elements
@@ -13417,6 +13418,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -13439,11 +13441,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13489,6 +13493,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
         
@@ -13511,11 +13516,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13563,6 +13570,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -13588,13 +13596,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13642,6 +13652,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -13667,13 +13678,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13721,6 +13734,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -13746,13 +13760,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13800,6 +13816,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -13825,13 +13842,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13879,6 +13898,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -13904,13 +13924,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -13958,6 +13980,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -13983,13 +14006,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14037,6 +14062,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -14062,13 +14088,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14116,6 +14144,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -14141,13 +14170,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14195,6 +14226,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -14220,13 +14252,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14274,6 +14308,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -14299,13 +14334,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14353,6 +14390,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -14378,13 +14416,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14432,6 +14472,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -14457,13 +14498,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14511,6 +14554,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -14536,13 +14580,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14590,6 +14636,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -14615,13 +14662,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14669,6 +14718,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -14694,13 +14744,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14748,6 +14800,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -14773,13 +14826,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14827,6 +14882,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -14852,13 +14908,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14906,6 +14964,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -14931,13 +14990,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -14985,6 +15046,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -15010,13 +15072,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15064,6 +15128,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -15089,13 +15154,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15143,6 +15210,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -15168,13 +15236,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15220,8 +15290,9 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         registerDestination             = 0x12
         -> # written
         r2 = [0, 2];                    value = 0x12; bitLength = 8
-        '"""
+        """
 
+        # Expected function inputs and outputs
         r0 : int = 0x08
         r1 : int = 0x0a
         r2_out : int = 0x12
@@ -15247,13 +15318,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15301,6 +15374,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x12; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x08
         r1 : int = 0x0a
         r2_out : int = 0x12
@@ -15326,13 +15400,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1024,                   r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15380,6 +15456,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0x12; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x08
         r1 : int = 0x0a
         r2_out : int = 0x12
@@ -15405,13 +15482,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 1024,                   r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15459,6 +15538,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x00
         r1 : int = 0x00
         r2_out : int = 0x00
@@ -15484,13 +15564,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15538,6 +15620,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x00
         r1 : int = 0x00
         r2_out : int = 0x00
@@ -15563,13 +15646,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15617,6 +15702,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 1024          |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x00
         r1 : int = 0x00
         r2_out : int = 0x00
@@ -15642,13 +15728,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15696,6 +15784,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x00
         r1 : int = 0x01
         r2_out : int = 0x01
@@ -15721,13 +15810,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15775,6 +15866,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x00
         r1 : int = 0x01
         r2_out : int = 0x01
@@ -15800,13 +15892,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15854,6 +15948,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 1024          |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x00
         r1 : int = 0x01
         r2_out : int = 0x01
@@ -15879,13 +15974,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -15933,6 +16030,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 0x00
         r2_out : int = 0x01
@@ -15958,13 +16056,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16012,6 +16112,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 0x00
         r2_out : int = 0x01
@@ -16037,13 +16138,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16091,6 +16194,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 0x00
         r2_out : int = 0x01
@@ -16116,13 +16220,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16170,6 +16276,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 0x01
         r2_out : int = 0x00
@@ -16195,13 +16302,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16249,6 +16358,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 0x01
         r2_out : int = 0x00
@@ -16274,13 +16384,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16328,6 +16440,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x02; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 0x01
         r2_out : int = 0x02
@@ -16353,13 +16466,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16407,6 +16522,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x1e; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0x0f
         r2_out : int = 0x1e
@@ -16432,13 +16548,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16486,6 +16604,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x1e; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0x0f
         r2_out : int = 0x1e
@@ -16511,13 +16630,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16565,6 +16686,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x1e; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0x0f
         r2_out : int = 0x1e
@@ -16590,13 +16712,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16644,6 +16768,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**19) + 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1 : int = 2**(2**19)
         r2_out : int = 2**(2**19) + 1
@@ -16669,13 +16794,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16723,6 +16850,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**19 + 1); bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**19)
         r1 : int = 2**(2**19)
         r2_out : int = 2**(2**19 + 1)
@@ -16748,13 +16876,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16802,6 +16932,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xfe; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0xfe
@@ -16827,13 +16958,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -16883,6 +17016,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**8 - 1)
@@ -16908,13 +17042,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -16964,6 +17100,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**512 - 1)
@@ -16989,13 +17126,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -17045,6 +17184,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -17070,13 +17210,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -17124,6 +17266,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b0101...; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -17149,13 +17292,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17203,6 +17348,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1010...; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -17228,13 +17374,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17282,6 +17430,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1111...; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 2**2048 - 1
@@ -17307,13 +17456,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17361,6 +17512,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1111...; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 2**2048 - 1
@@ -17386,13 +17538,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17440,6 +17594,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x3b; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0x3b
@@ -17465,13 +17620,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17521,6 +17678,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x + y) & (2**8 - 1)
@@ -17546,13 +17704,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -17602,6 +17762,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x + y) & (2**16 - 1)
@@ -17627,13 +17788,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -17681,6 +17844,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -17706,13 +17870,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17760,6 +17926,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -17785,13 +17952,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17839,6 +18008,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0xf0
         r2_out : int = 0xff
@@ -17864,13 +18034,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17918,6 +18090,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x05; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x03
         r1 : int = 0x02
         r2_out : int = 0x05
@@ -17943,13 +18116,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -17997,6 +18172,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x01
         r2_out : int = 0x00
@@ -18022,13 +18198,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18325,6 +18503,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -18349,11 +18528,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18403,6 +18584,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
 
@@ -18427,11 +18609,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18483,6 +18667,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -18510,13 +18695,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18568,6 +18755,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -18595,13 +18783,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18653,6 +18843,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -18680,13 +18871,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18738,6 +18931,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -18765,13 +18959,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18825,6 +19021,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0 = ['c', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -18856,14 +19053,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'c', 0,                                 c0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('c', 0,                    c0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -18917,6 +19116,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0 = ['c', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -18948,14 +19148,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'c', 0,                                 c0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('c', 0,                    c0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19009,6 +19211,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0 = ['c', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -19040,14 +19243,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'c', 0,                                 c0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('c', 0,                    c0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19101,6 +19306,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         c0 = ['c', 0];                  value = 1; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -19132,14 +19338,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'c', 0,                                 c0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('c', 0,                    c0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19193,6 +19401,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -19224,14 +19433,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19285,6 +19496,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -19316,14 +19528,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19377,6 +19591,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -19408,14 +19623,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19469,6 +19686,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 1                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -19500,14 +19718,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19563,6 +19783,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -19598,8 +19819,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -19607,6 +19826,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19662,6 +19885,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -19697,8 +19921,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -19706,6 +19928,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19761,6 +19987,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -19796,8 +20023,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -19805,6 +20030,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19860,6 +20089,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -19895,8 +20125,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -19904,6 +20132,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -19959,6 +20191,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -19994,8 +20227,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20003,6 +20234,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20058,6 +20293,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x81
         r1 : int = 0x81
         r2_out : int = 0x02
@@ -20093,8 +20329,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20102,6 +20336,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20157,6 +20395,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0x81
         r2_out : int = 0x81
@@ -20192,8 +20431,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20201,6 +20438,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20256,6 +20497,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x81
         r1 : int = 0
         r2_out : int = 0x81
@@ -20291,8 +20533,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20300,6 +20540,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20355,6 +20599,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x81
         r1 : int = 0x81
         r2_out : int = 0
@@ -20390,8 +20635,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20399,6 +20642,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20454,6 +20701,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x81
         r1 : int = 0x81
         r2_out : int = 0x02
@@ -20489,8 +20737,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20498,6 +20744,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20553,6 +20803,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x81
         r1 : int = 0x81
         r2_out : int = 0x02
@@ -20588,8 +20839,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20597,6 +20846,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20652,6 +20905,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -20687,8 +20941,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20696,6 +20948,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20751,6 +21007,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -20786,8 +21043,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20795,6 +21050,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20850,6 +21109,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -20885,8 +21145,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20894,6 +21152,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -20949,6 +21211,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -20984,8 +21247,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -20993,6 +21254,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21048,6 +21313,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 8                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -21083,8 +21349,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21092,6 +21356,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21147,6 +21415,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 255
         r1 : int = 1
         r2_out : int = 0
@@ -21182,8 +21451,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21191,6 +21458,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21246,6 +21517,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 255
         r2_out : int = 0
@@ -21281,8 +21553,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21290,6 +21560,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21345,6 +21619,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -21380,8 +21655,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21389,6 +21662,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21444,6 +21721,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -21479,8 +21757,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21488,6 +21764,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21543,6 +21823,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 8                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -21578,8 +21859,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21587,6 +21866,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21642,6 +21925,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r1024 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -21677,8 +21961,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21686,6 +21968,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21741,6 +22027,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1024 : int = 4
         r2_out : int = 16
@@ -21776,8 +22063,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1024,                   r1024),                                 # input, no change
@@ -21785,6 +22070,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21840,6 +22129,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r1024_out : int = 16
@@ -21875,8 +22165,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21884,6 +22172,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -21939,6 +22231,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -21974,8 +22267,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -21983,6 +22274,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 1024,                 c1024_out),                             # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22038,6 +22333,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o1024 = ['o', 1024];            value = 0; bitLength = 1                |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22073,8 +22369,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 1024,                              o1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22082,6 +22376,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 1024,                 o1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22137,6 +22435,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22172,8 +22471,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22182,6 +22479,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('o', 0,                    o0_out)                                 # output
         ]
         
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
+
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
         # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
@@ -22236,6 +22537,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22271,8 +22573,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22280,6 +22580,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22335,6 +22639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22370,8 +22675,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22379,6 +22682,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22434,6 +22741,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22469,8 +22777,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22478,6 +22784,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22533,6 +22843,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1024             |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22568,8 +22879,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22577,6 +22886,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22632,6 +22945,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1024             |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 12
         r1 : int = 4
         r2_out : int = 16
@@ -22667,8 +22981,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22676,6 +22988,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22731,6 +23047,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([1 << (i*4) for i in range(256)])
         r1 : int = sum([2 << (i*4) for i in range(256)])
         r2_out : int = sum([3 << (i*4) for i in range(256)])
@@ -22766,8 +23083,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22775,6 +23090,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22830,6 +23149,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 0
@@ -22865,8 +23185,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22874,6 +23192,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -22929,6 +23251,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 2)
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 2**(2**20 - 1)
@@ -22964,8 +23287,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -22973,6 +23294,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23024,6 +23349,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0                               |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r0_out : int = 0xfe
         
@@ -23052,11 +23378,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   0)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      0x0),                                   # result is undetermined, due to conflicting writes
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23110,6 +23438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0;   bitLength = 8              |
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf1
         r1 : int = 0x0f
         r0_out : int = 0x00
@@ -23141,11 +23470,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   0)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 2,                      0x00),                                  # result is undetermined, due to conflicting writes
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23200,6 +23531,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r2_out : int = 0xfe
         c0_out : int = 1
@@ -23233,14 +23565,16 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 2,                      r2_out),                                # output
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23298,6 +23632,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**8 - 1)
@@ -23333,8 +23668,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           'o', 0,                                 o0_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
@@ -23342,6 +23675,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('c', 0,            c0_out),                                # output
                     ('o', 0,            o0_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -23399,6 +23736,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = (r0 + r1) & (2**512 - 1)
@@ -23434,8 +23772,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           'o', 0,                                 o0_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
@@ -23443,6 +23779,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('c', 0,            c0_out),                                # output
                     ('o', 0,            o0_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -23498,6 +23838,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = ?; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
                 r0 : int = 1 << x
@@ -23535,8 +23876,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           'o', 0,                                 o0_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
@@ -23544,6 +23883,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('c', 0,            c0_out),                                # output
                     ('o', 0,            o0_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -23599,6 +23942,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1;          bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -23634,8 +23978,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -23643,6 +23985,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23698,6 +24044,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1;          bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -23733,8 +24080,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -23742,6 +24087,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23797,6 +24146,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0;          bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -23832,8 +24182,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -23841,6 +24189,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23896,6 +24248,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0;          bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 + r1) & (2**2048 - 1)
@@ -23931,8 +24284,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -23940,6 +24291,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -23994,6 +24349,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0x3b
@@ -24029,8 +24385,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -24038,6 +24392,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24095,6 +24453,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x + y) & (2**8 - 1)
@@ -24130,8 +24489,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           'o', 0,                                 o0_out),
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
@@ -24139,6 +24496,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('c', 0,            c0_out),                                # output
                     ('o', 0,            o0_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -24190,6 +24551,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0;          bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -24217,13 +24579,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out),
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24275,6 +24639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2;          bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -24302,13 +24667,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out),
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24360,6 +24727,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff;          bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0xf0
         r2_out : int = 0xff
@@ -24387,13 +24755,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out),
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24447,6 +24817,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x + y) & (2**8 - 1)
@@ -24474,13 +24845,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out),
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -24536,6 +24909,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         o0 = ['o', 0];                  value = 1;             bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 3
         r1 : int = 2
         r2_out : int = 1
@@ -24571,8 +24945,6 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   'o', 0,                                 o0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
@@ -24580,6 +24952,10 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('c', 0,                    c0_out),                                # output
             ('o', 0,                    o0_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24778,6 +25154,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -24800,11 +25177,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24850,6 +25229,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 1; bitLength = 1                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 1
 
@@ -24872,11 +25252,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -24924,6 +25306,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -24949,13 +25332,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25003,6 +25388,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -25028,13 +25414,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25082,6 +25470,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -25107,13 +25496,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25161,6 +25552,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -25186,13 +25578,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25240,6 +25634,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -25265,13 +25660,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25319,6 +25716,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 64; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 8
         r1 : int = 8
         r2_out : int = 64
@@ -25344,13 +25742,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25398,6 +25798,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 8
         r2_out : int = 0
@@ -25423,13 +25824,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25477,6 +25880,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 8
         r1 : int = 0
         r2_out : int = 0
@@ -25502,13 +25906,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25556,6 +25962,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 8
         r1 : int = 8
         r2_out : int = 0
@@ -25581,13 +25988,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25635,6 +26044,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -25660,13 +26070,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25714,6 +26126,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -25739,13 +26152,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25793,6 +26208,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -25818,13 +26234,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25872,6 +26290,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -25897,13 +26316,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -25951,6 +26372,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -25976,13 +26398,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26030,6 +26454,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -26055,13 +26480,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26109,6 +26536,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -26134,13 +26562,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26188,6 +26618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -26213,13 +26644,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26267,6 +26700,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -26292,13 +26726,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26346,6 +26782,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -26371,13 +26808,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26425,6 +26864,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -26450,13 +26890,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26504,6 +26946,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -26529,13 +26972,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26583,6 +27028,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x10; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r1024 : int = 0x04
         r1 : int = 0x04
         r2_out : int = 0x10
@@ -26608,13 +27054,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26662,6 +27110,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x10; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x04
         r1024 : int = 0x04
         r2_out : int = 0x10
@@ -26687,13 +27136,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1024,                   r1024),                                 # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26741,6 +27192,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0x10; bitLength = 8             |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x04
         r1 : int = 0x04
         r1024_out : int = 0x10
@@ -26766,13 +27218,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-        
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26820,6 +27274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -26845,13 +27300,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26899,6 +27356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -26924,13 +27382,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -26978,6 +27438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024             |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -27003,13 +27464,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27057,6 +27520,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -27082,13 +27546,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27136,6 +27602,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -27161,13 +27628,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27215,6 +27684,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -27240,13 +27710,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27294,6 +27766,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -27319,13 +27792,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27373,6 +27848,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -27398,13 +27874,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27452,6 +27930,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024             |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -27477,13 +27956,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27531,6 +28012,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -27556,13 +28038,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27610,6 +28094,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -27635,13 +28120,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27689,6 +28176,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024             |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -27714,13 +28202,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27768,6 +28258,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x80
         r1 : int = 0x80
         r2_out : int = 0x00
@@ -27793,13 +28284,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27847,6 +28340,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x00; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x80
         r1 : int = 0x80
         r2_out : int = 0x00
@@ -27872,13 +28366,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -27926,6 +28422,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x4000; bitLength = 1024        |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x80
         r1 : int = 0x80
         r2_out : int = 0x4000
@@ -27951,13 +28448,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28005,6 +28504,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 2**1024 - 1
         r1 : int = 0xff
         r2_out : int = 0x01
@@ -28030,13 +28530,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28084,6 +28586,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**19); bitLength = 2**20
         """
         
+        # Expected function inputs and outputs
         r0 : int = 2**(2**18)
         r1 : int = 2**(2**18)
         r2_out : int = 2**(2**19)
@@ -28109,13 +28612,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28161,6 +28666,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0x40; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x08
         r0_out : int = 0x40
 
@@ -28183,11 +28689,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out),                                # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28237,6 +28745,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = 2**(x + y) & (2**8 - 1)
@@ -28262,13 +28771,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out),                                # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -28318,6 +28829,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = 2**(x + y) & (2**512 - 1)
@@ -28343,13 +28855,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out),                                # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -28399,6 +28913,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = 2**(x + y)
@@ -28424,13 +28939,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out),                                # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -28478,6 +28995,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = ?; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
@@ -28503,13 +29021,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28557,6 +29077,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = ?; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
@@ -28582,13 +29103,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28636,6 +29159,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = ?; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
@@ -28661,13 +29185,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28715,6 +29241,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = ?; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = (r0 * r1) & (2**2048 - 1)
@@ -28740,13 +29267,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28794,6 +29323,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x3e04; bitLength = 16
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0x3e04
@@ -28819,13 +29349,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -28875,6 +29407,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x * y) & (2**8 - 1)
@@ -28900,13 +29433,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out),                                # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -28956,6 +29491,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x * y)
@@ -28981,13 +29517,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out),                                # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -29035,6 +29573,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x40; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x08
         r1 : int = 0x08
         r2_out : int = 0x40
@@ -29060,13 +29599,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29114,6 +29655,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**14; bitLength = 16
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x80
         r1 : int = 0x80
         r2_out : int = 2**14
@@ -29139,13 +29681,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29193,6 +29737,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x80
         r1 : int = 0x80
         r2_out : int = 0
@@ -29218,13 +29763,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-        
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29272,6 +29819,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xfe01; bitLength = 16
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0xfe01
@@ -29297,13 +29845,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out),                                # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29461,6 +30011,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -29481,11 +30032,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29529,6 +30082,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 1
 
@@ -29549,11 +30103,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29598,6 +30154,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -29619,12 +30176,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29669,6 +30228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 1
 
@@ -29690,12 +30250,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29740,6 +30302,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -29761,12 +30324,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29811,6 +30376,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0xff
 
@@ -29832,12 +30398,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29882,6 +30450,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -29903,12 +30472,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -29953,6 +30524,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 0                |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0
 
@@ -29974,12 +30546,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30024,6 +30598,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -30045,12 +30620,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30095,6 +30672,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -30116,12 +30694,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30166,6 +30746,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1_out : int = 1
 
@@ -30187,12 +30768,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30237,6 +30820,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0xff
 
@@ -30258,12 +30842,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30308,6 +30894,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff10; bitLength = 16
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1_out : int = 0xff10
 
@@ -30329,12 +30916,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30379,6 +30968,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0x10; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xf0f0
         r1_out : int = 0x10
 
@@ -30400,12 +30990,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30450,6 +31042,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xf1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r1024 : int = 0x0f
         r1_out : int = 0xf1
 
@@ -30471,12 +31064,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30521,6 +31116,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1024];                 value = 0xf1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1024_out : int = 0xf1
 
@@ -30542,12 +31138,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30592,6 +31190,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -30613,12 +31212,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30663,6 +31264,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1024             |
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -30684,12 +31286,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30734,6 +31338,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 1
 
@@ -30755,12 +31360,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30805,6 +31412,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 2**1024 - 1; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 2**1024 - 1
 
@@ -30826,12 +31434,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30876,6 +31486,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 2**2**20 - 1
         r1_out : int = 1
 
@@ -30897,12 +31508,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -30947,6 +31560,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 2**2**20 - 1; bitLength = 2**20
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 2**2**20 - 1
 
@@ -30968,12 +31582,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31018,6 +31634,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 2**20
         """
         
+        # Expected function inputs and outputs
         r0 : int = 2**2**20 - 1
         r1_out : int = 1
 
@@ -31039,12 +31656,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31089,6 +31708,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 2**2**20 - 1; bitLength = 2**20
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 2**2**20 - 1
 
@@ -31110,12 +31730,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31162,6 +31784,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x in range(8):
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 
                 bitArray : list[int] = [r0 >> i & 1 for i in range(8)] # Converts to bit array, index 0 is least significant bit
@@ -31187,12 +31810,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -31239,6 +31864,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x in range(512):
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
 
                 bitArray : list[int] = [r0 >> i & 1 for i in range(512)] # Converts to bit array, index 0 is least significant bit
@@ -31264,12 +31890,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -31316,6 +31944,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x in range(512):
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
 
                 bitArray : list[int] = [r0 >> i & 1 for i in range(2048)] # Converts to bit array, index 0 is least significant bit
@@ -31341,12 +31970,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -31391,6 +32022,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0b0101... + 1; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 0]) + 1
 
@@ -31412,12 +32044,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31462,6 +32096,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0b1010... + 1; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 1]) + 1
 
@@ -31483,12 +32118,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31535,6 +32172,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x in range(256):
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = x
 
                 bitArray : list[int] = [r0 >> i & 1 for i in range(8)] # Converts to bit array, index 0 is least significant bit
@@ -31560,12 +32198,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -31610,6 +32250,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
 
@@ -31631,12 +32272,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31681,6 +32324,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0xff
 
@@ -31702,12 +32346,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31752,6 +32398,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0x10; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1_out : int = 0x10
 
@@ -31773,12 +32420,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31823,6 +32472,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xfe; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x02
         r1_out : int = 0xfe
 
@@ -31844,12 +32494,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31894,6 +32546,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0x2; bitLength = 4
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xfe
         r1_out : int = 0x2
 
@@ -31915,12 +32568,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -31965,6 +32620,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x1
         r1_out : int = 0xff
 
@@ -31986,12 +32642,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32036,6 +32694,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xfc; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x4
         r1_out : int = 0xfc
 
@@ -32057,12 +32716,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32261,6 +32922,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -32283,11 +32945,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32333,6 +32997,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [1, 1];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 1
 
@@ -32355,11 +33020,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32407,6 +33074,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -32432,13 +33100,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32486,6 +33156,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -32511,13 +33182,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32565,6 +33238,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -32590,13 +33264,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32644,6 +33320,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -32669,13 +33346,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32723,6 +33402,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -32748,13 +33428,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32802,6 +33484,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0xff
@@ -32827,13 +33510,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32881,6 +33566,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0xff
         r2_out : int = 0
@@ -32906,13 +33592,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -32960,6 +33648,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0
         r2_out : int = 0
@@ -32985,13 +33674,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33039,6 +33730,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0
@@ -33064,13 +33756,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33118,6 +33812,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -33143,13 +33838,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33197,6 +33894,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -33222,13 +33920,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33276,6 +33976,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -33301,13 +34002,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33355,6 +34058,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -33380,13 +34084,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33434,6 +34140,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -33459,13 +34166,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33513,6 +34222,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -33538,13 +34248,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33592,6 +34304,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -33617,13 +34330,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33671,6 +34386,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -33696,13 +34412,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33750,6 +34468,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -33775,13 +34494,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33829,6 +34550,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -33854,13 +34576,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33908,6 +34632,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -33933,13 +34658,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -33987,6 +34714,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -34012,13 +34740,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34066,6 +34796,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x0f; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r1024 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0x0f
@@ -34091,13 +34822,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34145,6 +34878,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x0f; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1024 : int = 0x0f
         r2_out : int = 0x0f
@@ -34170,13 +34904,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1024,                   r1024),                                 # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34224,6 +34960,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0x0f; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r1024_out : int = 0x0f
@@ -34249,13 +34986,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-        
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34303,6 +35042,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -34328,13 +35068,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34382,6 +35124,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -34407,13 +35150,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34461,6 +35206,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -34486,13 +35232,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34540,6 +35288,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -34565,13 +35314,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34619,6 +35370,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -34644,13 +35396,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34698,6 +35452,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -34723,13 +35478,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34777,6 +35534,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -34802,13 +35560,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34856,6 +35616,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -34881,13 +35642,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -34935,6 +35698,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0
@@ -34960,13 +35724,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35014,6 +35780,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -35039,13 +35806,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35093,6 +35862,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -35118,13 +35888,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35172,6 +35944,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -35197,13 +35970,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35251,6 +36026,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x0f; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0x0f
@@ -35276,13 +36052,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35330,6 +36108,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x0f; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0x0f
@@ -35355,13 +36134,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35409,6 +36190,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x0f; bitLength = 1024
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0x0f
@@ -35434,13 +36216,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35488,6 +36272,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**20 - 1); bitLength = 2**20
         """
         
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 2**(2**20 - 1)
@@ -35513,13 +36298,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35567,6 +36354,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2**20
         """
         
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 0
@@ -35592,13 +36380,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35648,6 +36438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = r0 & r1
@@ -35673,13 +36464,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -35729,6 +36522,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = r0 & r1
@@ -35754,13 +36548,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -35810,6 +36606,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = 1 << x
                 r1 : int = 1 << y
                 r2_out : int = r0 & r1
@@ -35835,13 +36632,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -35889,6 +36688,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1010...; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 1])
@@ -35914,13 +36714,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -35968,6 +36770,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b0101...; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 0])
@@ -35993,13 +36796,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36047,6 +36852,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
@@ -36072,13 +36878,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36126,6 +36934,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
         
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
@@ -36151,13 +36960,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36205,6 +37016,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x3c; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0x3c
@@ -36230,13 +37042,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36286,6 +37100,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = x & y
@@ -36311,13 +37126,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -36365,6 +37182,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -36390,13 +37208,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36444,6 +37264,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -36469,13 +37290,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36523,6 +37346,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0xf0
         r2_out : int = 0
@@ -36548,13 +37372,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36602,6 +37428,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x02; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0x03
         r1 : int = 0x02
         r2_out : int = 0x02
@@ -36627,13 +37454,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36833,6 +37662,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -36855,11 +37685,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36905,6 +37737,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 1
         
@@ -36927,11 +37760,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -36979,6 +37814,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -37004,13 +37840,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37058,6 +37896,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -37083,13 +37922,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37137,6 +37978,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -37162,13 +38004,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37216,6 +38060,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -37241,13 +38086,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37295,6 +38142,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -37320,13 +38168,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37374,6 +38224,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0xff
@@ -37399,13 +38250,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37453,6 +38306,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0xff
         r2_out : int = 0xff
@@ -37478,13 +38332,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37532,6 +38388,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0
         r2_out : int = 0xff
@@ -37557,13 +38414,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37611,6 +38470,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0
@@ -37636,13 +38496,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37690,6 +38552,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -37715,13 +38578,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37769,6 +38634,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -37794,13 +38660,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37848,6 +38716,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -37873,13 +38742,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -37927,6 +38798,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -37952,13 +38824,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38006,6 +38880,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -38031,13 +38906,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38085,6 +38962,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -38110,13 +38988,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38164,6 +39044,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -38189,13 +39070,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38243,6 +39126,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -38268,13 +39152,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38322,6 +39208,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -38347,13 +39234,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38401,6 +39290,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -38426,13 +39316,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38480,6 +39372,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -38505,13 +39398,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38559,6 +39454,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -38584,13 +39480,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38638,6 +39536,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r1024 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xff
@@ -38663,13 +39562,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38717,6 +39618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1024 : int = 0x0f
         r2_out : int = 0xff
@@ -38742,13 +39644,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1024,                   r1024),                                 # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38796,6 +39700,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0xff; bitLength = 8
         """
         
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r1024_out : int = 0xff
@@ -38821,13 +39726,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38875,6 +39782,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -38900,13 +39808,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -38954,6 +39864,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -38979,13 +39890,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39033,6 +39946,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -39058,13 +39972,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39112,6 +40028,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -39137,13 +40054,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39191,6 +40110,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -39216,13 +40136,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39270,6 +40192,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -39295,13 +40218,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39349,6 +40274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -39374,13 +40300,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39428,6 +40356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -39453,13 +40382,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39507,6 +40438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -39532,13 +40464,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39586,6 +40520,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -39611,13 +40546,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39665,6 +40602,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -39690,13 +40628,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39744,6 +40684,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -39769,13 +40710,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39823,6 +40766,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xff
@@ -39848,13 +40792,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39902,6 +40848,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xff
@@ -39927,13 +40874,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -39981,6 +40930,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xff
@@ -40006,13 +40956,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40060,6 +41012,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**20 - 1); bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 2**(2**20 - 1)
@@ -40085,13 +41038,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40139,6 +41094,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**20 - 1) + 2**(2**20 - 2); bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 2**(2**20 - 1) + 2**(2**20 - 2)
@@ -40164,13 +41120,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40220,6 +41178,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = r0 | r1
@@ -40245,13 +41204,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -40301,6 +41262,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = r0 | r1
@@ -40326,13 +41288,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -40382,6 +41346,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = r0 | r1
@@ -40407,13 +41372,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -40461,6 +41428,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1010...; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 1])
@@ -40486,13 +41454,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40540,6 +41510,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b0101...; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = sum([2**i for i in range(2048) if i % 2 == 0])
@@ -40565,13 +41536,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40619,6 +41592,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1111...; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 2**2048 - 1
@@ -40644,13 +41618,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40698,6 +41674,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0b1111...; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 2**2048 - 1
@@ -40723,13 +41700,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40777,6 +41756,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0xff
@@ -40802,13 +41782,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -40858,6 +41840,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = x | y
@@ -40883,13 +41866,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input
                     (0, 1,              r1),                                    # input
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -40937,6 +41922,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -40962,13 +41948,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41016,6 +42004,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -41041,13 +42030,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41095,6 +42086,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0xf0
         r2_out : int = 0xff
@@ -41120,13 +42112,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41174,6 +42168,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x03; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x03
         r1 : int = 0x02
         r2_out : int = 0x03
@@ -41199,13 +42194,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input
             (0, 1,                      r1),                                    # input
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41404,6 +42401,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -41426,11 +42424,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41476,6 +42476,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
         
@@ -41498,11 +42499,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41550,6 +42553,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -41575,13 +42579,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41629,6 +42635,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -41654,13 +42661,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41708,6 +42717,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -41733,13 +42743,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41787,6 +42799,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -41812,13 +42825,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41866,6 +42881,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -41891,13 +42907,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -41945,6 +42963,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1 : int = 0x0f
         r2_out : int = 0xff
@@ -41970,13 +42989,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42024,6 +43045,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x0f; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0x0f
         r2_out : int = 0x0f
@@ -42049,13 +43071,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42103,6 +43127,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1 : int = 0
         r2_out : int = 0xf0
@@ -42128,13 +43153,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42182,6 +43209,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1 : int = 0x0f
         r2_out : int = 0
@@ -42207,13 +43235,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42261,6 +43291,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -42286,13 +43317,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42340,6 +43373,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -42365,13 +43399,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42419,6 +43455,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -42444,13 +43481,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42498,6 +43537,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -42523,13 +43563,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42577,6 +43619,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -42602,13 +43645,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42656,6 +43701,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -42681,13 +43727,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42735,6 +43783,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -42760,13 +43809,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42814,6 +43865,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -42839,13 +43891,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42893,6 +43947,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -42918,13 +43973,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -42972,6 +44029,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -42997,13 +44055,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43051,6 +44111,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -43076,13 +44137,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43130,6 +44193,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -43155,13 +44219,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43209,6 +44275,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r1024 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xf0
@@ -43234,13 +44301,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43288,6 +44357,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1024 : int = 0x0f
         r2_out : int = 0xf0
@@ -43313,13 +44383,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1024,                   r1024),                                 # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43367,6 +44439,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r1024_out : int = 0
@@ -43392,13 +44465,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43446,6 +44521,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -43471,13 +44547,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43525,6 +44603,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -43550,13 +44629,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43604,6 +44685,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -43629,13 +44711,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43683,6 +44767,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -43708,13 +44793,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43762,6 +44849,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -43787,13 +44875,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43841,6 +44931,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 1
@@ -43866,13 +44957,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43920,6 +45013,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -43945,13 +45039,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -43999,6 +45095,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -44024,13 +45121,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44078,6 +45177,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -44103,13 +45203,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44157,6 +45259,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -44182,13 +45285,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44236,6 +45341,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -44261,13 +45367,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44315,6 +45423,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -44340,13 +45449,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44394,6 +45505,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xf0
@@ -44419,13 +45531,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44473,6 +45587,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xf0
@@ -44498,13 +45613,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44552,6 +45669,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0x0f
         r2_out : int = 0xf0
@@ -44577,13 +45695,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44631,6 +45751,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 1)
         r2_out : int = 0
@@ -44656,13 +45777,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44710,6 +45833,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = 2**(2**20 - 2)
         r2_out : int = 2**(2**20 - 1) + 2**(2**20 - 2)
@@ -44735,13 +45859,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -44791,6 +45917,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = r0 ^ r1
@@ -44816,13 +45943,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -44872,6 +46001,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = r0 ^ r1
@@ -44897,13 +46027,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -44953,6 +46085,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = r0 ^ r1
@@ -44978,13 +46111,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -45032,6 +46167,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
@@ -45057,13 +46193,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45111,6 +46249,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
@@ -45136,13 +46275,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45190,6 +46331,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**2048 - 1; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 2**2048 - 1
@@ -45215,13 +46357,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45269,6 +46413,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**2048 - 1; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 2**2048 - 1
@@ -45294,13 +46439,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45348,6 +46495,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xc3; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0xc3
@@ -45373,13 +46521,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45429,6 +46579,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = x ^ y
@@ -45454,13 +46605,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',                   0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [
                     (0, 0,                      r0),                                    # input, no change
                     (0, 1,                      r1),                                    # input, no change
                     (0, 2,                      r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -45508,6 +46661,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -45533,13 +46687,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45587,6 +46743,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -45612,13 +46769,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45666,6 +46825,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0xf0
         r2_out : int = 0xff
@@ -45691,13 +46851,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45745,6 +46907,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0x01; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x03
         r1 : int = 0x02
         r2_out : int = 0x01
@@ -45770,13 +46933,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -45932,6 +47097,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 1
         
@@ -45952,11 +47118,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46000,6 +47168,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
         
@@ -46020,11 +47189,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46069,6 +47240,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 1
         
@@ -46090,12 +47262,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46140,6 +47314,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0
         
@@ -46161,12 +47336,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46211,6 +47388,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0
         
@@ -46232,12 +47410,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46282,6 +47462,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1_out : int = 0xf0
         
@@ -46303,12 +47484,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46353,6 +47536,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0xff
         
@@ -46374,12 +47558,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46424,6 +47610,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1_out : int = 0
         
@@ -46445,12 +47632,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46495,6 +47684,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 1
         
@@ -46516,12 +47706,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46566,6 +47758,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0xff
         
@@ -46587,12 +47780,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46637,6 +47832,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1_out : int = 0
         
@@ -46658,12 +47854,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46708,6 +47906,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xfe; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0xfe
         
@@ -46729,12 +47928,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46779,6 +47980,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r1024 : int = 0x0f
         r1_out : int = 0xf0
         
@@ -46800,12 +48002,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46850,6 +48054,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1024_out : int = 0xf0
         
@@ -46871,12 +48076,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46921,6 +48128,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 1
         
@@ -46942,12 +48150,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -46992,6 +48202,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xffff...; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 2**1024 - 1
         
@@ -47013,12 +48224,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47063,6 +48276,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0
         
@@ -47084,12 +48298,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47134,6 +48350,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = (2**1024 - 1) - 1
         
@@ -47155,12 +48372,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47205,6 +48424,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1_out : int = 0xf0
         
@@ -47226,12 +48446,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47276,6 +48498,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xffff...f0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1_out : int = (2**1024 - 1) - 0x0f
         
@@ -47297,12 +48520,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47347,6 +48572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 2**(2**20) - 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 2**(2**20) - 1
         
@@ -47368,12 +48594,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47418,6 +48646,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20) - 1
         r1_out : int = 0
         
@@ -47439,12 +48668,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47489,6 +48720,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 2**(2**20) - 1 - (2**(2**19) - 1); bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**19) - 1
         r1_out : int = 2**(2**20) - 1 - (2**(2**19) - 1)
         
@@ -47510,12 +48742,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47560,6 +48794,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 2**(2**19) - 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20) - 1 - (2**(2**19) - 1)
         r1_out : int = 2**(2**19) - 1
         
@@ -47581,12 +48816,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47633,6 +48870,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x in [x for x in range(8)]:
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1_out : int = r0 ^ 0xff
                 
@@ -47654,12 +48892,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -47706,6 +48946,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x in [x for x in range(512)]:
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1_out : int = r0 ^ (2**512 - 1)
                 
@@ -47727,12 +48968,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -47779,6 +49022,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x in [x for x in range(512)]:
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1_out : int = r0 ^ (2**2048 - 1)
                 
@@ -47800,12 +49044,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -47850,6 +49096,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0b0101...; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 0])
         
@@ -47871,12 +49118,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47921,6 +49170,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0b1010...; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1_out : int = sum([2**i for i in range(2048) if i % 2 == 1])
         
@@ -47942,12 +49192,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -47994,6 +49246,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x in [x for x in range(256)]:
             with self.subTest(x=x):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1_out : int = r0 ^ 0xff
                 
@@ -48015,12 +49268,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 1,                                   r1_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -48065,6 +49320,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1_out : int = 0xff
         
@@ -48086,12 +49342,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48136,6 +49394,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xfe; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1_out : int = 0xfe
         
@@ -48157,12 +49416,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48207,6 +49468,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0x0f; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1_out : int = 0x0f
         
@@ -48228,12 +49490,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48278,6 +49542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xfd; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x02
         r1_out : int = 0xfd
         
@@ -48299,12 +49564,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48349,6 +49616,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0x1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xfe
         r1_out : int = 0x1
         
@@ -48370,12 +49638,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48420,6 +49690,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1 = [0, 1];                    value = 0xfe; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x01
         r1_out : int = 0xfe
         
@@ -48441,12 +49712,14 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1,                                   r1_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48647,6 +49920,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -48669,11 +49943,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48719,6 +49995,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
         
@@ -48741,11 +50018,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48791,6 +50070,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 2
         
@@ -48813,11 +50093,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48863,6 +50145,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 8; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r0_out : int = 8
         
@@ -48885,11 +50168,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -48935,6 +50220,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 24; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 3
         r0_out : int = 24
         
@@ -48957,11 +50243,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49009,6 +50297,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -49034,13 +50323,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49088,6 +50379,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -49113,13 +50405,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49167,6 +50461,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -49192,13 +50487,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49246,6 +50543,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -49271,13 +50569,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49325,6 +50625,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -49350,13 +50651,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49404,6 +50707,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -49429,13 +50733,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49483,6 +50789,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -49508,13 +50815,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49562,6 +50871,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -49587,13 +50897,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49641,6 +50953,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -49666,13 +50979,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49720,6 +51035,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -49745,13 +51061,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49799,6 +51117,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -49824,13 +51143,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49878,6 +51199,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -49903,13 +51225,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -49957,6 +51281,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -49982,13 +51307,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50036,6 +51363,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -50061,13 +51389,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50115,6 +51445,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -50140,13 +51471,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50194,6 +51527,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -50219,13 +51553,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50273,6 +51609,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -50298,13 +51635,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50352,6 +51691,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -50377,13 +51717,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50431,6 +51773,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -50456,13 +51799,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50510,6 +51855,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -50535,13 +51881,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50589,6 +51937,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -50614,13 +51963,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50668,6 +52019,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -50693,13 +52045,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50747,6 +52101,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r1024 : int = 0x0f
         r1 : int = 0x04
         r2_out : int = 0xf0
@@ -50772,13 +52127,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r1024),                                 # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50826,6 +52183,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1024 : int = 0x04
         r2_out : int = 0xf0
@@ -50851,13 +52209,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1024,                   r1024),                                 # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50905,6 +52265,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r1024 = [0, 1024];              value = 0xf0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0x0f
         r1 : int = 0x04
         r1024_out : int = 0xf0
@@ -50930,13 +52291,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r1024_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 1024,                   r1024_out)                              # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -50984,6 +52347,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -51009,13 +52373,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51063,6 +52429,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -51088,13 +52455,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51142,6 +52511,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -51167,13 +52537,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51221,6 +52593,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -51246,13 +52619,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51300,6 +52675,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -51325,13 +52701,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51379,6 +52757,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -51404,13 +52783,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51458,6 +52839,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -51483,13 +52865,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51537,6 +52921,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -51562,13 +52947,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51616,6 +53003,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -51641,13 +53029,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51695,6 +53085,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -51720,13 +53111,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51774,6 +53167,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -51799,13 +53193,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51853,6 +53249,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -51878,13 +53275,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -51932,6 +53331,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xfe; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 1
         r2_out : int = 0xfe
@@ -51957,13 +53357,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52011,6 +53413,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0
@@ -52036,13 +53439,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52090,6 +53495,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0xff << 0xff; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 0xff
         r2_out : int = 0xff << 0xff
@@ -52115,13 +53521,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52169,6 +53577,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**0xff; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0xff
         r2_out : int = 2**0xff
@@ -52194,13 +53603,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52248,6 +53659,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**0xffff; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0xffff
         r2_out : int = 2**0xffff
@@ -52273,13 +53685,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52327,6 +53741,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**0xffff + 2**0x10000; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 3
         r1 : int = 0xffff
         r2_out : int = 2**0xffff + 2**0x10000
@@ -52352,13 +53767,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52406,6 +53823,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**18); bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 2**18
         r2_out : int = 2**(2**18)
@@ -52431,13 +53849,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52487,6 +53907,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(8) for y in range(8)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = (r0 << r1) & 0xff
@@ -52512,13 +53933,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -52568,6 +53991,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = (r0 << r1) & (2**512 - 1) if r1 <= 512 else 0  # if/else prevents extreme memory use
@@ -52593,13 +54017,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -52649,6 +54075,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(512) for y in range(512)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = (1 << x)
                 r1 : int = (1 << y)
                 r2_out : int = (r0 << r1) & (2**2048 - 1) if r1 <= 2048 else 0 # if/else prevents extreme memory use
@@ -52674,13 +54101,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -52728,6 +54157,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
@@ -52753,13 +54183,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52807,6 +54239,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
@@ -52832,13 +54265,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52886,6 +54321,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r2_out : int = 0
@@ -52911,13 +54347,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -52965,6 +54403,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2048
         """
 
+        # Expected function inputs and outputs
         r0 : int = sum([2**i for i in range(2048) if i % 2 == 0])
         r1 : int = sum([2**i for i in range(2048) if i % 2 == 1])
         r2_out : int = 0
@@ -52990,13 +54429,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53044,6 +54485,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xfc
         r1 : int = 0x3f
         r2_out : int = 0
@@ -53069,13 +54511,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53125,6 +54569,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x << y) & (2**8 - 1)
@@ -53150,13 +54595,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -53206,6 +54653,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         for x, y in [(x, y) for x in range(256) for y in range(256)]:
             with self.subTest(x=x, y=y):
+                # Expected function inputs and outputs
                 r0 : int = x
                 r1 : int = y
                 r2_out : int = (x << y) & (2**1024 - 1)
@@ -53231,13 +54679,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                     ('write',           0, 2,                                   r2_out)
                 ]
 
-                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
                 expectedRegisters : list[tuple[str | int, str | int, int]] = [  # order matters
                     (0, 0,              r0),                                    # input, no change
                     (0, 1,              r1),                                    # input, no change
                     (0, 2,              r2_out)                                 # output
                 ]
+
+                # UnitTests and verifications
+
+                resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
@@ -53285,6 +54735,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -53310,13 +54761,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53364,6 +54817,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 2
@@ -53389,13 +54843,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53443,6 +54899,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 128; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 7
         r2_out : int = 128
@@ -53468,13 +54925,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53522,6 +54981,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 8
         r2_out : int = 0
@@ -53547,13 +55007,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53601,6 +55063,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 128; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 7
         r2_out : int = 128
@@ -53626,13 +55089,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53680,6 +55145,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 2**(2**20 - 1); bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 2**20 - 1
         r2_out : int = 2**(2**20 - 1)
@@ -53705,13 +55171,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -53759,6 +55227,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r2 = [0, 2];                    value = 0; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 2**20
         r2_out : int = 0
@@ -53784,13 +55253,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54017,7 +55488,8 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         -> # written
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
-
+        
+        # Expected function inputs and outputs
         r0 : int = 0
         r0_out : int = 0
         
@@ -54042,11 +55514,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54093,6 +55567,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
         
@@ -54117,11 +55592,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54168,6 +55645,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r0_out : int = 0
         
@@ -54192,11 +55670,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54244,6 +55724,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r0_out : int = 0
         
@@ -54268,11 +55749,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54320,6 +55803,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 0];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 3
         r0_out : int = 0
         
@@ -54344,11 +55828,13 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 0,                                   r0_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0_out)                                 # input, output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54398,6 +55884,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -54425,13 +55912,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54481,6 +55970,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -54508,13 +55998,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54564,6 +56056,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -54591,13 +56084,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54647,6 +56142,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -54674,13 +56170,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54730,6 +56228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 4
         r1 : int = 1
         r2_out : int = 2
@@ -54757,13 +56256,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54813,6 +56314,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -54840,13 +56342,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54896,6 +56400,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -54923,13 +56428,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -54979,6 +56486,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0x78; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1 : int = 1
         r2_out : int = 0x78
@@ -55006,13 +56514,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55062,6 +56572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0xf8; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xf0
         r1 : int = 1
         r2_out : int = 0xf8
@@ -55089,13 +56600,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55145,6 +56658,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -55172,13 +56686,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55228,6 +56744,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r1 : int = 1
         r2_out : int = 1
@@ -55255,13 +56772,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55311,6 +56830,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -55338,13 +56858,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55394,6 +56916,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r1 : int = 0
         r2_out : int = 2
@@ -55421,13 +56944,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55477,6 +57002,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r1 : int = 1
         r2_out : int = 0
@@ -55504,13 +57030,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55560,6 +57088,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -55587,13 +57116,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55643,6 +57174,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r1 : int = 1
         r2_out : int = 1
@@ -55670,13 +57202,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55726,6 +57260,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -55753,13 +57288,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55809,6 +57346,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 2; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r1 : int = 0
         r2_out : int = 2
@@ -55836,13 +57374,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55892,6 +57432,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 0
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2
         r1 : int = 1
         r2_out : int = 0
@@ -55919,13 +57460,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -55975,6 +57518,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -56002,13 +57546,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56058,6 +57604,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -56085,13 +57632,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56141,6 +57690,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -56168,13 +57718,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56224,6 +57776,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -56251,13 +57804,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56307,6 +57862,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -56334,13 +57890,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56390,6 +57948,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -56417,13 +57976,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56473,6 +58034,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -56500,13 +58062,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56556,6 +58120,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -56583,13 +58148,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56639,6 +58206,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -56666,13 +58234,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56722,6 +58292,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -56749,13 +58320,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56805,6 +58378,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -56832,13 +58406,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56888,6 +58464,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -56915,13 +58492,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -56971,6 +58550,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -56998,13 +58578,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57054,6 +58636,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -57081,13 +58664,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57137,6 +58722,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -57164,13 +58750,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57220,6 +58808,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -57247,13 +58836,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57303,6 +58894,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -57330,13 +58922,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57386,6 +58980,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 0xff
@@ -57413,13 +59008,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57469,6 +59066,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -57496,13 +59094,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57552,6 +59152,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -57579,13 +59180,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57635,6 +59238,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -57662,13 +59266,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57718,6 +59324,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -57745,13 +59352,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57801,6 +59410,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -57828,13 +59438,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57884,6 +59496,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0xff; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0xff
@@ -57911,13 +59524,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -57967,6 +59582,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0x7f; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 1
         r2_out : int = 0x7f
@@ -57994,13 +59610,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 1024,                   r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58050,6 +59668,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0x7f; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 1
         r2_out : int = 0x7f
@@ -58077,13 +59696,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1024,                   r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58133,6 +59754,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 1024];                 value = 0x7f; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0xff
         r1 : int = 1
         r2_out : int = 0x7f
@@ -58160,13 +59782,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 1024,                                r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 1024,                   r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58216,6 +59840,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -58243,13 +59868,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58299,6 +59926,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 8
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -58326,13 +59954,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58382,6 +60012,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -58409,13 +60040,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58465,6 +60098,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -58492,13 +60126,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58548,6 +60184,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -58575,13 +60212,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58631,6 +60270,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 0
         r2_out : int = 0
@@ -58658,13 +60298,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58714,6 +60356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -58741,13 +60384,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58797,6 +60442,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -58824,13 +60470,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58880,6 +60528,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -58907,13 +60556,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -58963,6 +60614,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -58990,13 +60642,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59046,6 +60700,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -59073,13 +60728,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59129,6 +60786,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 0
         r1 : int = 1
         r2_out : int = 0
@@ -59156,13 +60814,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59212,6 +60872,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -59239,13 +60900,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59295,6 +60958,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -59322,13 +60986,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59378,6 +61044,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -59405,13 +61072,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59461,6 +61130,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -59488,13 +61158,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59544,6 +61216,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = 1
@@ -59571,13 +61244,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59627,6 +61302,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = (2**1024-1); bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 0
         r2_out : int = (2**1024-1)
@@ -59654,13 +61330,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59710,6 +61388,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -59737,13 +61416,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59793,6 +61474,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -59820,13 +61502,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59876,6 +61560,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -59903,13 +61588,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -59959,6 +61646,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 0; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 0
@@ -59986,13 +61674,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -60042,6 +61732,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 1
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = 1
@@ -60069,13 +61760,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -60125,6 +61818,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = (2**1024-1); bitLength = 1024
         """
 
+        # Expected function inputs and outputs
         r0 : int = 1
         r1 : int = 1
         r2_out : int = (2**1024-1)
@@ -60152,13 +61846,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -60208,6 +61904,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = (2**20 - 1)
         r2_out : int = 1
@@ -60235,13 +61932,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
@@ -60291,6 +61990,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         r0 = [0, 2];                    value = 2**(2**20) - 1; bitLength = 2**20
         """
 
+        # Expected function inputs and outputs
         r0 : int = 2**(2**20 - 1)
         r1 : int = (2**20 - 1)
         r2_out : int = 2**(2**20) - 1
@@ -60318,13 +62018,15 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
             ('write',                   0, 2,                                   r2_out)
         ]
 
-        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
-
         expectedRegisters : list[tuple[str | int, str | int, int]] = [
             (0, 0,                      r0),                                    # input, no change
             (0, 1,                      r1),                                    # input, no change
             (0, 2,                      r2_out)                                 # output
         ]
+
+        # UnitTests and verifications
+
+        resultActivity : list[tuple[str, str | int, str | int, int]] = MMMU.getActivity()
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
