@@ -63919,7 +63919,7 @@ if __name__ == "__main__":
     # runs all tests
     # to run a specific test module, use $> python .\CPUSimulator.py [test module ...]
     logging.basicConfig(level = logging.ERROR)
-    unittest.main(verbosity = 2, buffer = True, exit = False)
+    unittest.main(verbosity = 1, buffer = True, exit = False)
 
     # # run specific test from a specific testCase
     # suite = unittest.TestSuite()
