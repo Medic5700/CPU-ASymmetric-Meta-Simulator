@@ -271,7 +271,7 @@ Reference:
 #asserts python version
 import sys
 version = sys.version_info
-assert version[0] == 3 and version[1] >= 10, "Python version 3.10 or greater required, needed due to new feature used [variable typing]"
+assert version[0] == 3 and version[1] >= 13, "Python version 3.10 or greater required, needed due to new feature used [variable typing]"
 
 import copy # copy.deepcopy() required because states are a nested dictionary, and need to be copied instead of referenced
 import functools # used for partial functions when executioning 'instruction operations'
@@ -280,7 +280,7 @@ import random
 from decimal import Decimal # used for handling floating point numbers in limited areas. IE: keeping track of energy usage of a single hyper efficiant instruction (10^-4)
 
 #Some stuff for more complex annotation typing
-from typing import Any, Callable, Generic, Literal, Optional, Type, TypeVar
+from typing import Any, Callable, Generic, Literal, Optional, ReadOnly, Type, TypeVar
 
 from dataclasses import dataclass # used for namespace objects (dictionaries just wasn't going to cut it)
 from abc import ABC, abstractmethod # used for abstract classes

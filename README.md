@@ -5,7 +5,7 @@ A Meta CPU Simulator Engine to allow simulation of Custom CPU Architectures and 
 It has been moved here for continued development (**minus commit history**).
 
 ### Development Stack
-- Python 3.10 or greater (required for variable annotations support)
+- Python 3.13 or greater (required for variable annotations support)
 - A terminal that supports ANSI (IE: default Ubuntu Terminal or the "Windows Terminal" app for Windows)
 
 ### Getting Started
