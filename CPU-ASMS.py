@@ -12511,7 +12511,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -12582,7 +12582,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -12653,7 +12653,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -12727,7 +12727,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 1))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -12801,7 +12801,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 1))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -12875,7 +12875,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 1))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -12952,7 +12952,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 2))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13029,7 +13029,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 1))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13106,7 +13106,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13177,7 +13177,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13248,7 +13248,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13319,7 +13319,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13390,7 +13390,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultBitLength : int = MMMU.dummyGetConfigWrapper(('_imm', 0))['bitLength']
 
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13623,7 +13623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13698,7 +13698,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13780,7 +13780,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13862,7 +13862,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -13944,7 +13944,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14026,7 +14026,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14108,7 +14108,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14190,7 +14190,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14272,7 +14272,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14354,7 +14354,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14436,7 +14436,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14518,7 +14518,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14600,7 +14600,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14682,7 +14682,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14764,7 +14764,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14846,7 +14846,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -14928,7 +14928,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15010,7 +15010,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15092,7 +15092,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15174,7 +15174,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15256,7 +15256,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15338,7 +15338,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15420,7 +15420,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15502,7 +15502,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15584,7 +15584,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15666,7 +15666,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15748,7 +15748,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15830,7 +15830,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15912,7 +15912,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -15994,7 +15994,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16076,7 +16076,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16158,7 +16158,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16240,7 +16240,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16322,7 +16322,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16404,7 +16404,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16486,7 +16486,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16568,7 +16568,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16650,7 +16650,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16732,7 +16732,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16814,7 +16814,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16896,7 +16896,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -16978,7 +16978,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17060,7 +17060,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17142,7 +17142,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17226,7 +17226,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -17310,7 +17310,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -17394,7 +17394,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -17476,7 +17476,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17558,7 +17558,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17640,7 +17640,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17722,7 +17722,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17804,7 +17804,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -17888,7 +17888,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -17972,7 +17972,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -18054,7 +18054,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18136,7 +18136,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18218,7 +18218,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18300,7 +18300,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18382,7 +18382,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18710,7 +18710,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18791,7 +18791,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18879,7 +18879,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -18967,7 +18967,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19055,7 +19055,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19143,7 +19143,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19238,7 +19238,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19333,7 +19333,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19428,7 +19428,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19523,7 +19523,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19618,7 +19618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19713,7 +19713,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19808,7 +19808,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -19903,7 +19903,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20005,7 +20005,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20107,7 +20107,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20209,7 +20209,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20311,7 +20311,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20413,7 +20413,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20515,7 +20515,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20617,7 +20617,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20719,7 +20719,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20821,7 +20821,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -20923,7 +20923,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21025,7 +21025,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21127,7 +21127,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21229,7 +21229,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21331,7 +21331,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21433,7 +21433,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21535,7 +21535,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21637,7 +21637,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21739,7 +21739,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21841,7 +21841,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -21943,7 +21943,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22045,7 +22045,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22147,7 +22147,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22249,7 +22249,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22351,7 +22351,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22453,7 +22453,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22555,7 +22555,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22657,7 +22657,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22759,7 +22759,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22861,7 +22861,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -22963,7 +22963,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23065,7 +23065,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23167,7 +23167,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23269,7 +23269,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23371,7 +23371,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23473,7 +23473,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23560,7 +23560,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23652,7 +23652,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23750,7 +23750,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -23854,7 +23854,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -23958,7 +23958,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -24062,7 +24062,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -24164,7 +24164,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24266,7 +24266,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24368,7 +24368,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24470,7 +24470,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24572,7 +24572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24676,7 +24676,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -24764,7 +24764,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24852,7 +24852,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -24940,7 +24940,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25030,7 +25030,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -25132,7 +25132,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25360,7 +25360,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25435,7 +25435,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25517,7 +25517,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25599,7 +25599,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25681,7 +25681,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25763,7 +25763,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25845,7 +25845,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -25927,7 +25927,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26009,7 +26009,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26091,7 +26091,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26173,7 +26173,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26255,7 +26255,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26337,7 +26337,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26419,7 +26419,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26501,7 +26501,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26583,7 +26583,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26665,7 +26665,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26747,7 +26747,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26829,7 +26829,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26911,7 +26911,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -26993,7 +26993,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27075,7 +27075,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27157,7 +27157,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27239,7 +27239,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27321,7 +27321,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27403,7 +27403,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27485,7 +27485,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27567,7 +27567,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27649,7 +27649,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27731,7 +27731,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27813,7 +27813,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27895,7 +27895,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -27977,7 +27977,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28059,7 +28059,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28141,7 +28141,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28223,7 +28223,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28305,7 +28305,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28387,7 +28387,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28469,7 +28469,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28551,7 +28551,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28633,7 +28633,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28715,7 +28715,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28797,7 +28797,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28872,7 +28872,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -28956,7 +28956,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -29040,7 +29040,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -29124,7 +29124,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -29206,7 +29206,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29288,7 +29288,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29370,7 +29370,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29452,7 +29452,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29534,7 +29534,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29618,7 +29618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -29702,7 +29702,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -29784,7 +29784,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29866,7 +29866,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -29948,7 +29948,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30030,7 +30030,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30215,7 +30215,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30286,7 +30286,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30360,7 +30360,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30434,7 +30434,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30508,7 +30508,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30582,7 +30582,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30656,7 +30656,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30730,7 +30730,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30804,7 +30804,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30878,7 +30878,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -30952,7 +30952,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31026,7 +31026,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31100,7 +31100,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31174,7 +31174,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31248,7 +31248,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31322,7 +31322,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31396,7 +31396,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31470,7 +31470,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31544,7 +31544,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31618,7 +31618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31692,7 +31692,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31766,7 +31766,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31840,7 +31840,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31914,7 +31914,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -31994,7 +31994,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -32074,7 +32074,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -32154,7 +32154,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -32228,7 +32228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32302,7 +32302,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32382,7 +32382,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -32456,7 +32456,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32530,7 +32530,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32604,7 +32604,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32678,7 +32678,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32752,7 +32752,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32826,7 +32826,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -32900,7 +32900,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33128,7 +33128,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33203,7 +33203,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33285,7 +33285,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33367,7 +33367,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33449,7 +33449,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33531,7 +33531,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33613,7 +33613,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33695,7 +33695,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33777,7 +33777,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33859,7 +33859,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -33941,7 +33941,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34023,7 +34023,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34105,7 +34105,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34187,7 +34187,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34269,7 +34269,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34351,7 +34351,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34433,7 +34433,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34515,7 +34515,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34597,7 +34597,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34679,7 +34679,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34761,7 +34761,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34843,7 +34843,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -34925,7 +34925,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35007,7 +35007,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35089,7 +35089,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35171,7 +35171,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35253,7 +35253,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35335,7 +35335,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35417,7 +35417,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35499,7 +35499,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35581,7 +35581,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35663,7 +35663,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35745,7 +35745,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35827,7 +35827,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35909,7 +35909,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -35991,7 +35991,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36073,7 +36073,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36155,7 +36155,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36237,7 +36237,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36319,7 +36319,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36401,7 +36401,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36483,7 +36483,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36565,7 +36565,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36649,7 +36649,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -36733,7 +36733,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -36817,7 +36817,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -36899,7 +36899,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -36981,7 +36981,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37063,7 +37063,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37145,7 +37145,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37227,7 +37227,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37311,7 +37311,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -37393,7 +37393,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37475,7 +37475,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37557,7 +37557,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37639,7 +37639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37868,7 +37868,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -37943,7 +37943,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38025,7 +38025,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38107,7 +38107,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38189,7 +38189,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38271,7 +38271,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38353,7 +38353,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38435,7 +38435,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38517,7 +38517,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38599,7 +38599,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38681,7 +38681,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38763,7 +38763,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38845,7 +38845,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -38927,7 +38927,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39009,7 +39009,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39091,7 +39091,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39173,7 +39173,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39255,7 +39255,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39337,7 +39337,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39419,7 +39419,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39501,7 +39501,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39583,7 +39583,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39665,7 +39665,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39747,7 +39747,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39829,7 +39829,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39911,7 +39911,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -39993,7 +39993,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40075,7 +40075,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40157,7 +40157,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40239,7 +40239,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40321,7 +40321,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40403,7 +40403,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40485,7 +40485,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40567,7 +40567,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40649,7 +40649,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40731,7 +40731,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40813,7 +40813,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40895,7 +40895,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -40977,7 +40977,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41059,7 +41059,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41141,7 +41141,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41223,7 +41223,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41305,7 +41305,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41389,7 +41389,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -41473,7 +41473,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -41557,7 +41557,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -41639,7 +41639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41721,7 +41721,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41803,7 +41803,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41885,7 +41885,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -41967,7 +41967,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42051,7 +42051,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -42133,7 +42133,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42215,7 +42215,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42297,7 +42297,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42379,7 +42379,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42607,7 +42607,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42682,7 +42682,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42764,7 +42764,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42846,7 +42846,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -42928,7 +42928,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43010,7 +43010,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43092,7 +43092,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43174,7 +43174,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43256,7 +43256,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43338,7 +43338,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43420,7 +43420,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43502,7 +43502,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43584,7 +43584,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43666,7 +43666,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43748,7 +43748,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43830,7 +43830,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43912,7 +43912,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -43994,7 +43994,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44076,7 +44076,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44158,7 +44158,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44240,7 +44240,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44322,7 +44322,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44404,7 +44404,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44486,7 +44486,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44568,7 +44568,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44650,7 +44650,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44732,7 +44732,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44814,7 +44814,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44896,7 +44896,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -44978,7 +44978,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45060,7 +45060,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45142,7 +45142,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45224,7 +45224,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45306,7 +45306,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45388,7 +45388,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45470,7 +45470,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45552,7 +45552,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45634,7 +45634,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45716,7 +45716,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45798,7 +45798,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45880,7 +45880,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -45962,7 +45962,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46044,7 +46044,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46128,7 +46128,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -46212,7 +46212,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -46296,7 +46296,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -46378,7 +46378,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46460,7 +46460,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46542,7 +46542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46624,7 +46624,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46706,7 +46706,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46790,7 +46790,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -46872,7 +46872,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -46954,7 +46954,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47036,7 +47036,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47118,7 +47118,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47301,7 +47301,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47372,7 +47372,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47446,7 +47446,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47520,7 +47520,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47594,7 +47594,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47668,7 +47668,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47742,7 +47742,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47816,7 +47816,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47890,7 +47890,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -47964,7 +47964,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48038,7 +48038,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48112,7 +48112,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48186,7 +48186,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48260,7 +48260,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48334,7 +48334,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48408,7 +48408,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48482,7 +48482,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48556,7 +48556,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48630,7 +48630,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48704,7 +48704,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48778,7 +48778,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48852,7 +48852,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -48926,7 +48926,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49000,7 +49000,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49076,7 +49076,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -49152,7 +49152,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -49228,7 +49228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -49302,7 +49302,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49376,7 +49376,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49452,7 +49452,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -49526,7 +49526,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49600,7 +49600,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49674,7 +49674,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49748,7 +49748,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49822,7 +49822,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -49896,7 +49896,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50126,7 +50126,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50201,7 +50201,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50276,7 +50276,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50351,7 +50351,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50426,7 +50426,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50508,7 +50508,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50590,7 +50590,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50672,7 +50672,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50754,7 +50754,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50836,7 +50836,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -50918,7 +50918,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51000,7 +51000,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51082,7 +51082,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51164,7 +51164,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51246,7 +51246,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51328,7 +51328,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51410,7 +51410,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51492,7 +51492,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51574,7 +51574,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51656,7 +51656,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51738,7 +51738,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51820,7 +51820,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51902,7 +51902,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -51984,7 +51984,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52066,7 +52066,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52148,7 +52148,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52230,7 +52230,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52312,7 +52312,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52394,7 +52394,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52476,7 +52476,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52558,7 +52558,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52640,7 +52640,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52722,7 +52722,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52804,7 +52804,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52886,7 +52886,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -52968,7 +52968,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53050,7 +53050,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53132,7 +53132,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53214,7 +53214,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53296,7 +53296,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53378,7 +53378,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53460,7 +53460,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53542,7 +53542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53624,7 +53624,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53706,7 +53706,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53788,7 +53788,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53870,7 +53870,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -53952,7 +53952,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54034,7 +54034,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54118,7 +54118,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -54202,7 +54202,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -54286,7 +54286,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -54368,7 +54368,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54450,7 +54450,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54532,7 +54532,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54614,7 +54614,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54696,7 +54696,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -54780,7 +54780,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -54864,7 +54864,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -54946,7 +54946,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55028,7 +55028,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55110,7 +55110,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55192,7 +55192,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55274,7 +55274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55356,7 +55356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55438,7 +55438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55697,7 +55697,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55775,7 +55775,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55853,7 +55853,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -55932,7 +55932,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56011,7 +56011,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56097,7 +56097,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56183,7 +56183,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56269,7 +56269,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56355,7 +56355,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56441,7 +56441,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56527,7 +56527,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56613,7 +56613,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56699,7 +56699,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56785,7 +56785,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56871,7 +56871,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -56957,7 +56957,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57043,7 +57043,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57129,7 +57129,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57215,7 +57215,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57301,7 +57301,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57387,7 +57387,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57473,7 +57473,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57559,7 +57559,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57645,7 +57645,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57731,7 +57731,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57817,7 +57817,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57903,7 +57903,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -57989,7 +57989,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58075,7 +58075,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58161,7 +58161,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58247,7 +58247,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58333,7 +58333,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58419,7 +58419,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58505,7 +58505,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58591,7 +58591,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58677,7 +58677,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58763,7 +58763,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58849,7 +58849,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -58935,7 +58935,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59021,7 +59021,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59107,7 +59107,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59193,7 +59193,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59279,7 +59279,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59365,7 +59365,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59451,7 +59451,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59537,7 +59537,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59623,7 +59623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59709,7 +59709,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59795,7 +59795,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59881,7 +59881,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -59967,7 +59967,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60053,7 +60053,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60139,7 +60139,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60225,7 +60225,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60311,7 +60311,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60397,7 +60397,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60483,7 +60483,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60569,7 +60569,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60655,7 +60655,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60741,7 +60741,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60827,7 +60827,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60913,7 +60913,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -60999,7 +60999,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61085,7 +61085,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61171,7 +61171,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61257,7 +61257,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61343,7 +61343,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61429,7 +61429,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61515,7 +61515,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61601,7 +61601,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61687,7 +61687,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61773,7 +61773,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61859,7 +61859,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -61945,7 +61945,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -62031,7 +62031,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -62117,7 +62117,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -62203,7 +62203,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -62291,7 +62291,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -62379,7 +62379,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -62467,7 +62467,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -62562,7 +62562,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -62657,7 +62657,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -62752,7 +62752,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
                 resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
                 
-                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+                # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
                 # x : list[tuple[str | int, ...]]
                 # y : tuple[str | int, ...]
                 # z : str | int
@@ -62838,7 +62838,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -62924,7 +62924,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -63010,7 +63010,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -63096,7 +63096,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -63182,7 +63182,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
@@ -63268,7 +63268,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
 
         resultRegisters : list[tuple[str | int, str | int, int]] = [(i, j, MMMU.readWrittenRegister(i, j)) for i, j, _ in expectedRegisters]
         
-        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string '----'
+        # function that takes in data structure specified, and filters out numbers to large to print (python str() function limitation), replacing them with the string 'LargeNumber'
         # x : list[tuple[str | int, ...]]
         # y : tuple[str | int, ...]
         # z : str | int
