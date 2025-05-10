@@ -12516,7 +12516,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -12587,7 +12587,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -12658,7 +12658,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -12732,7 +12732,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -12806,7 +12806,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -12880,7 +12880,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -12957,7 +12957,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13034,7 +13034,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13111,7 +13111,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13182,7 +13182,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13253,7 +13253,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13324,7 +13324,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13395,7 +13395,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         filterSingleLargeNumber : Callable[[int], int | str] = lambda x : (x if (x < 10**100) else x) if (type(x) is int) else x
         
         self.assertEqual(returnValue, expectedReturnValue,
@@ -13628,7 +13628,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -13703,7 +13703,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -13785,7 +13785,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -13867,7 +13867,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -13949,7 +13949,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14031,7 +14031,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14113,7 +14113,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14195,7 +14195,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14277,7 +14277,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14359,7 +14359,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14441,7 +14441,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14523,7 +14523,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14605,7 +14605,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14687,7 +14687,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14769,7 +14769,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14851,7 +14851,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -14933,7 +14933,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15015,7 +15015,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15097,7 +15097,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15179,7 +15179,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15261,7 +15261,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15343,7 +15343,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15425,7 +15425,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15507,7 +15507,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15589,7 +15589,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15671,7 +15671,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15753,7 +15753,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15835,7 +15835,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15917,7 +15917,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -15999,7 +15999,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16081,7 +16081,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16163,7 +16163,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16245,7 +16245,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16327,7 +16327,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16409,7 +16409,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16491,7 +16491,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16573,7 +16573,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16655,7 +16655,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16737,7 +16737,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16819,7 +16819,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16901,7 +16901,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -16983,7 +16983,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17065,7 +17065,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17147,7 +17147,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17231,7 +17231,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17315,7 +17315,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17399,7 +17399,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17481,7 +17481,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17563,7 +17563,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17645,7 +17645,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17727,7 +17727,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17809,7 +17809,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17893,7 +17893,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -17977,7 +17977,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18059,7 +18059,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18141,7 +18141,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18223,7 +18223,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18305,7 +18305,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18387,7 +18387,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18715,7 +18715,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18796,7 +18796,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18884,7 +18884,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -18972,7 +18972,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19060,7 +19060,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19148,7 +19148,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19243,7 +19243,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19338,7 +19338,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19433,7 +19433,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19528,7 +19528,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19623,7 +19623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19718,7 +19718,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19813,7 +19813,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -19908,7 +19908,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20010,7 +20010,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20112,7 +20112,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20214,7 +20214,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20316,7 +20316,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20418,7 +20418,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20520,7 +20520,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20622,7 +20622,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20724,7 +20724,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20826,7 +20826,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -20928,7 +20928,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21030,7 +21030,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21132,7 +21132,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21234,7 +21234,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21336,7 +21336,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21438,7 +21438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21540,7 +21540,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21642,7 +21642,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21744,7 +21744,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21846,7 +21846,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -21948,7 +21948,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22050,7 +22050,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22152,7 +22152,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22254,7 +22254,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22356,7 +22356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22458,7 +22458,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22560,7 +22560,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22662,7 +22662,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22764,7 +22764,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22866,7 +22866,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -22968,7 +22968,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23070,7 +23070,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23172,7 +23172,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23274,7 +23274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23376,7 +23376,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23478,7 +23478,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23565,7 +23565,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23657,7 +23657,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23755,7 +23755,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23859,7 +23859,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -23963,7 +23963,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24067,7 +24067,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24169,7 +24169,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24271,7 +24271,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24373,7 +24373,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24475,7 +24475,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24577,7 +24577,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24681,7 +24681,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24769,7 +24769,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24857,7 +24857,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -24945,7 +24945,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25035,7 +25035,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25137,7 +25137,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25365,7 +25365,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25440,7 +25440,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25522,7 +25522,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25604,7 +25604,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25686,7 +25686,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25768,7 +25768,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25850,7 +25850,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -25932,7 +25932,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26014,7 +26014,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26096,7 +26096,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26178,7 +26178,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26260,7 +26260,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26342,7 +26342,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26424,7 +26424,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26506,7 +26506,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26588,7 +26588,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26670,7 +26670,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26752,7 +26752,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26834,7 +26834,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26916,7 +26916,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -26998,7 +26998,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27080,7 +27080,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27162,7 +27162,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27244,7 +27244,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27326,7 +27326,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27408,7 +27408,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27490,7 +27490,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27572,7 +27572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27654,7 +27654,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27736,7 +27736,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27818,7 +27818,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27900,7 +27900,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -27982,7 +27982,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28064,7 +28064,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28146,7 +28146,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28228,7 +28228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28310,7 +28310,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28392,7 +28392,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28474,7 +28474,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28556,7 +28556,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28638,7 +28638,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28720,7 +28720,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28802,7 +28802,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28877,7 +28877,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -28961,7 +28961,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29045,7 +29045,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29129,7 +29129,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29211,7 +29211,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29293,7 +29293,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29375,7 +29375,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29457,7 +29457,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29539,7 +29539,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29623,7 +29623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29707,7 +29707,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29789,7 +29789,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29871,7 +29871,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -29953,7 +29953,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30035,7 +30035,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30220,7 +30220,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30291,7 +30291,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30365,7 +30365,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30439,7 +30439,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30513,7 +30513,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30587,7 +30587,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30661,7 +30661,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30735,7 +30735,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30809,7 +30809,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30883,7 +30883,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -30957,7 +30957,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31031,7 +31031,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31105,7 +31105,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31179,7 +31179,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31253,7 +31253,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31327,7 +31327,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31401,7 +31401,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31475,7 +31475,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31549,7 +31549,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31623,7 +31623,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31697,7 +31697,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31771,7 +31771,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31845,7 +31845,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31919,7 +31919,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -31999,7 +31999,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32079,7 +32079,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32159,7 +32159,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32233,7 +32233,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32307,7 +32307,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32387,7 +32387,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32461,7 +32461,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32535,7 +32535,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32609,7 +32609,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32683,7 +32683,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32757,7 +32757,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32831,7 +32831,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -32905,7 +32905,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33133,7 +33133,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33208,7 +33208,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33290,7 +33290,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33372,7 +33372,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33454,7 +33454,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33536,7 +33536,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33618,7 +33618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33700,7 +33700,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33782,7 +33782,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33864,7 +33864,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -33946,7 +33946,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34028,7 +34028,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34110,7 +34110,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34192,7 +34192,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34274,7 +34274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34356,7 +34356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34438,7 +34438,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34520,7 +34520,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34602,7 +34602,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34684,7 +34684,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34766,7 +34766,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34848,7 +34848,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -34930,7 +34930,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35012,7 +35012,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35094,7 +35094,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35176,7 +35176,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35258,7 +35258,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35340,7 +35340,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35422,7 +35422,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35504,7 +35504,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35586,7 +35586,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35668,7 +35668,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35750,7 +35750,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35832,7 +35832,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35914,7 +35914,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -35996,7 +35996,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36078,7 +36078,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36160,7 +36160,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36242,7 +36242,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36324,7 +36324,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36406,7 +36406,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36488,7 +36488,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36570,7 +36570,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36654,7 +36654,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36738,7 +36738,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36822,7 +36822,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36904,7 +36904,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -36986,7 +36986,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37068,7 +37068,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37150,7 +37150,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37232,7 +37232,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37316,7 +37316,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37398,7 +37398,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37480,7 +37480,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37562,7 +37562,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37644,7 +37644,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37873,7 +37873,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -37948,7 +37948,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38030,7 +38030,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38112,7 +38112,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38194,7 +38194,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38276,7 +38276,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38358,7 +38358,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38440,7 +38440,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38522,7 +38522,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38604,7 +38604,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38686,7 +38686,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38768,7 +38768,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38850,7 +38850,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -38932,7 +38932,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39014,7 +39014,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39096,7 +39096,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39178,7 +39178,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39260,7 +39260,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39342,7 +39342,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39424,7 +39424,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39506,7 +39506,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39588,7 +39588,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39670,7 +39670,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39752,7 +39752,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39834,7 +39834,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39916,7 +39916,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -39998,7 +39998,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40080,7 +40080,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40162,7 +40162,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40244,7 +40244,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40326,7 +40326,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40408,7 +40408,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40490,7 +40490,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40572,7 +40572,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40654,7 +40654,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40736,7 +40736,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40818,7 +40818,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40900,7 +40900,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -40982,7 +40982,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41064,7 +41064,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41146,7 +41146,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41228,7 +41228,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41310,7 +41310,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41394,7 +41394,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41478,7 +41478,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41562,7 +41562,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41644,7 +41644,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41726,7 +41726,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41808,7 +41808,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41890,7 +41890,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -41972,7 +41972,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42056,7 +42056,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42138,7 +42138,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42220,7 +42220,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42302,7 +42302,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42384,7 +42384,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42612,7 +42612,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42687,7 +42687,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42769,7 +42769,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42851,7 +42851,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -42933,7 +42933,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43015,7 +43015,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43097,7 +43097,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43179,7 +43179,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43261,7 +43261,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43343,7 +43343,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43425,7 +43425,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43507,7 +43507,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43589,7 +43589,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43671,7 +43671,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43753,7 +43753,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43835,7 +43835,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43917,7 +43917,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -43999,7 +43999,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44081,7 +44081,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44163,7 +44163,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44245,7 +44245,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44327,7 +44327,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44409,7 +44409,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44491,7 +44491,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44573,7 +44573,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44655,7 +44655,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44737,7 +44737,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44819,7 +44819,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44901,7 +44901,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -44983,7 +44983,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45065,7 +45065,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45147,7 +45147,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45229,7 +45229,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45311,7 +45311,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45393,7 +45393,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45475,7 +45475,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45557,7 +45557,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45639,7 +45639,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45721,7 +45721,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45803,7 +45803,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45885,7 +45885,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -45967,7 +45967,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46049,7 +46049,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46133,7 +46133,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46217,7 +46217,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46301,7 +46301,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46383,7 +46383,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46465,7 +46465,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46547,7 +46547,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46629,7 +46629,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46711,7 +46711,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46795,7 +46795,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46877,7 +46877,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -46959,7 +46959,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47041,7 +47041,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47123,7 +47123,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47306,7 +47306,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47377,7 +47377,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47451,7 +47451,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47525,7 +47525,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47599,7 +47599,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47673,7 +47673,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47747,7 +47747,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47821,7 +47821,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47895,7 +47895,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -47969,7 +47969,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48043,7 +48043,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48117,7 +48117,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48191,7 +48191,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48265,7 +48265,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48339,7 +48339,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48413,7 +48413,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48487,7 +48487,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48561,7 +48561,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48635,7 +48635,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48709,7 +48709,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48783,7 +48783,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48857,7 +48857,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -48931,7 +48931,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49005,7 +49005,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49081,7 +49081,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49157,7 +49157,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49233,7 +49233,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49307,7 +49307,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49381,7 +49381,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49457,7 +49457,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49531,7 +49531,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49605,7 +49605,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49679,7 +49679,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49753,7 +49753,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49827,7 +49827,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -49901,7 +49901,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50131,7 +50131,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50206,7 +50206,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50281,7 +50281,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50356,7 +50356,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50431,7 +50431,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50513,7 +50513,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50595,7 +50595,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50677,7 +50677,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50759,7 +50759,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50841,7 +50841,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -50923,7 +50923,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51005,7 +51005,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51087,7 +51087,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51169,7 +51169,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51251,7 +51251,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51333,7 +51333,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51415,7 +51415,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51497,7 +51497,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51579,7 +51579,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51661,7 +51661,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51743,7 +51743,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51825,7 +51825,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51907,7 +51907,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -51989,7 +51989,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52071,7 +52071,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52153,7 +52153,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52235,7 +52235,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52317,7 +52317,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52399,7 +52399,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52481,7 +52481,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52563,7 +52563,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52645,7 +52645,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52727,7 +52727,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52809,7 +52809,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52891,7 +52891,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -52973,7 +52973,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53055,7 +53055,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53137,7 +53137,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53219,7 +53219,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53301,7 +53301,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53383,7 +53383,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53465,7 +53465,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53547,7 +53547,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53629,7 +53629,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53711,7 +53711,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53793,7 +53793,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53875,7 +53875,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -53957,7 +53957,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54039,7 +54039,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54123,7 +54123,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54207,7 +54207,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54291,7 +54291,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54373,7 +54373,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54455,7 +54455,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54537,7 +54537,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54619,7 +54619,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54701,7 +54701,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54785,7 +54785,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54869,7 +54869,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
                 # y : tuple[str | int, ...]
                 # z : str | int
                 filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-                    [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+                    [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
                 
                 self.assertEqual(returnValue, None,
                     f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -54951,7 +54951,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55033,7 +55033,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55115,7 +55115,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55197,7 +55197,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55279,7 +55279,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55361,7 +55361,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55443,7 +55443,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55702,7 +55702,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55780,7 +55780,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55858,7 +55858,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -55937,7 +55937,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56016,7 +56016,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56102,7 +56102,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56188,7 +56188,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56274,7 +56274,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56360,7 +56360,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56446,7 +56446,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56532,7 +56532,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56618,7 +56618,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56704,7 +56704,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56790,7 +56790,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56876,7 +56876,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -56962,7 +56962,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57048,7 +57048,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57134,7 +57134,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57220,7 +57220,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57306,7 +57306,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57392,7 +57392,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57478,7 +57478,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57564,7 +57564,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57650,7 +57650,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57736,7 +57736,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57822,7 +57822,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57908,7 +57908,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -57994,7 +57994,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58080,7 +58080,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58166,7 +58166,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58252,7 +58252,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58338,7 +58338,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58424,7 +58424,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58510,7 +58510,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58596,7 +58596,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58682,7 +58682,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58768,7 +58768,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58854,7 +58854,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -58940,7 +58940,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59026,7 +59026,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59112,7 +59112,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59198,7 +59198,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59284,7 +59284,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59370,7 +59370,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59456,7 +59456,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59542,7 +59542,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59628,7 +59628,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59714,7 +59714,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59800,7 +59800,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59886,7 +59886,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -59972,7 +59972,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60058,7 +60058,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60144,7 +60144,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60230,7 +60230,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60316,7 +60316,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60402,7 +60402,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60488,7 +60488,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60574,7 +60574,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60660,7 +60660,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60746,7 +60746,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60832,7 +60832,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -60918,7 +60918,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61004,7 +61004,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61090,7 +61090,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61176,7 +61176,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61262,7 +61262,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61348,7 +61348,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61434,7 +61434,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61520,7 +61520,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61606,7 +61606,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61692,7 +61692,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61778,7 +61778,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61864,7 +61864,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -61950,7 +61950,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -62036,7 +62036,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -62122,7 +62122,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
@@ -62208,7 +62208,7 @@ class Test_InstructionSetDefault_BuildingBlocks(unittest.TestCase):
         # y : tuple[str | int, ...]
         # z : str | int
         filterLargeNumbers : Callable[[list[tuple[str | int, ...]]], list[tuple[str | int, ...]]] = lambda x : \
-            [tuple([((z if z < 10**100 else '----') if (type(z) is int) else z) for z in y]) for y in x]
+            [tuple([((z if z < 10**100 else 'LargeNumber') if (type(z) is int) else z) for z in y]) for y in x]
         
         self.assertEqual(returnValue, None,
             f'\nAssert function return value is None:\nExpected None\nResult {returnValue}')
